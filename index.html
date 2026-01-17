@@ -6,755 +6,548 @@
   <title>Operación Cena Secreta</title>
   <style>
     :root{
-      --bg:#0c0f14;
-      --card:#121826;
-      --card2:#0f1522;
-      --text:#e9eef7;
-      --muted:#a9b3c7;
-      --gold:#c9a86a;
-      --gold2:#b8924a;
-      --line:rgba(201,168,106,.22);
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 18px;
-      --radius2: 14px;
-      --maxw: 860px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bg: #f6f1e8;        /* beige suave */
+      --paper: #ffffff;     /* tarjeta */
+      --ink: #1b1b1b;       /* texto principal */
+      --muted: #5f5a52;     /* texto secundario */
+      --line: #e8dfd2;      /* líneas */
+      --accent: #b99663;    /* dorado-beige */
+      --accent2:#8a7352;    /* acento oscuro */
+      --shadow: 0 12px 36px rgba(22,18,12,.08);
+      --r: 18px;
+      --r2: 14px;
+      --maxw: 880px;
       --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       min-height:100vh;
-      font-family: var(--font);
-      color: var(--text);
       background:
-        radial-gradient(900px 500px at 20% 10%, rgba(201,168,106,.16), transparent 60%),
-        radial-gradient(900px 600px at 90% 80%, rgba(111,148,255,.12), transparent 55%),
-        linear-gradient(180deg, #07090d, var(--bg) 35%, #07090d);
+        radial-gradient(900px 500px at 15% 10%, rgba(185,150,99,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 70%, rgba(120,90,55,.10), transparent 58%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
       display:flex;
-      align-items:center;
       justify-content:center;
-      padding: 28px 14px;
+      padding: 32px 14px;
     }
-    .wrap{
-      width:100%;
-      max-width: var(--maxw);
-    }
+
+    .wrap{ width:100%; max-width: var(--maxw); }
     .card{
-      background: linear-gradient(180deg, rgba(18,24,38,.92), rgba(10,14,22,.92));
+      background: rgba(255,255,255,.86);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--r);
       box-shadow: var(--shadow);
       overflow:hidden;
+      backdrop-filter: blur(6px);
     }
-    .header{
+
+    header{
       padding: 28px 26px 18px;
       border-bottom: 1px solid var(--line);
-      background:
-        radial-gradient(700px 220px at 15% 0%, rgba(201,168,106,.13), transparent 60%),
-        linear-gradient(180deg, rgba(18,24,38,.6), rgba(18,24,38,0));
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72));
     }
-    .badge{
+
+    .pill{
       display:inline-flex;
       align-items:center;
       gap:10px;
       padding: 8px 12px;
-      border: 1px solid rgba(201,168,106,.35);
+      border: 1px solid rgba(185,150,99,.35);
       border-radius: 999px;
-      color: var(--gold);
-      background: rgba(201,168,106,.08);
-      font-weight:600;
-      letter-spacing:.2px;
+      color: var(--accent2);
+      background: rgba(185,150,99,.10);
+      font-weight: 650;
+      letter-spacing: .2px;
       font-size: 13px;
     }
-    .badge .dot{
-      width:8px;height:8px;border-radius:99px;background:var(--gold);
-      box-shadow: 0 0 0 4px rgba(201,168,106,.12);
-    }
-    h1{
-      margin: 14px 0 6px;
-      font-family: var(--serif);
-      font-weight: 700;
-      letter-spacing: .2px;
-      font-size: clamp(24px, 3.2vw, 34px);
-      line-height: 1.12;
-    }
-    .subtitle{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 15.5px;
-      max-width: 72ch;
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(185,150,99,.12);
     }
 
-    .content{
-      padding: 20px 26px 26px;
+    h1{
+      margin: 14px 0 8px;
+      font-family: var(--serif);
+      font-weight: 750;
+      letter-spacing: .2px;
+      font-size: clamp(28px, 3.3vw, 40px);
+      line-height: 1.08;
     }
+
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16px;
+      max-width: 78ch;
+    }
+    .lead strong{ color: var(--ink); }
+
+    main{ padding: 22px 26px 28px; }
 
     .panel{
-      background: linear-gradient(180deg, rgba(15,21,34,.55), rgba(15,21,34,.25));
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius2);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r2);
       padding: 18px 16px;
     }
+
     .rules{
       margin: 10px 0 0;
-      padding-left: 18px;
+      padding: 0;
+      list-style:none;
       color: var(--muted);
-      line-height: 1.55;
-      font-size: 14px;
+      line-height: 1.6;
+      font-size: 14.5px;
+      display:grid;
+      gap: 6px;
+    }
+    .rules li::before{
+      content:"•";
+      color: var(--accent);
+      margin-right: 10px;
     }
 
-    .btnrow{
+    .row{
       display:flex;
-      flex-wrap:wrap;
       gap: 12px;
-      margin-top: 18px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+      align-items:center;
     }
+
     button{
       font-family: inherit;
-      border-radius: 14px;
-      border: 1px solid rgba(201,168,106,.35);
-      background: linear-gradient(180deg, rgba(201,168,106,.18), rgba(201,168,106,.06));
-      color: var(--text);
-      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(185,150,99,.45);
+      background: linear-gradient(180deg, rgba(185,150,99,.20), rgba(185,150,99,.10));
+      color: var(--ink);
+      padding: 12px 16px;
       cursor:pointer;
-      transition: transform .08s ease, border-color .12s ease, background .12s ease;
-      font-weight: 650;
+      transition: transform .08s ease, background .14s ease, border-color .14s ease;
+      font-weight: 700;
       letter-spacing: .15px;
     }
     button:hover{
       transform: translateY(-1px);
-      border-color: rgba(201,168,106,.55);
-      background: linear-gradient(180deg, rgba(201,168,106,.24), rgba(201,168,106,.08));
+      border-color: rgba(185,150,99,.70);
+      background: linear-gradient(180deg, rgba(185,150,99,.26), rgba(185,150,99,.12));
     }
-    button:active{
-      transform: translateY(0px) scale(.99);
-    }
-    .btn-primary{
-      padding: 12px 18px;
-    }
-    .btn-ghost{
-      border-color: rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
+    button:active{ transform: translateY(0) scale(.99); }
+
+    .ghost{
+      border-color: rgba(0,0,0,.10);
+      background: transparent;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 650;
+    }
+    .ghost:hover{
+      border-color: rgba(0,0,0,.16);
+      background: rgba(0,0,0,.03);
+      transform: translateY(-1px);
     }
 
-    .progressWrap{
-      margin-top: 16px;
+    .progress{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
+      gap: 12px;
       color: var(--muted);
       font-size: 13px;
+      margin-bottom: 12px;
     }
     .bar{
       flex:1;
       height: 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.05);
+      border: 1px solid rgba(0,0,0,.06);
       overflow:hidden;
     }
     .fill{
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, rgba(201,168,106,.25), rgba(201,168,106,.65));
-      border-right: 1px solid rgba(255,255,255,.22);
-      transition: width .25s ease;
+      background: linear-gradient(90deg, rgba(185,150,99,.35), rgba(185,150,99,.90));
+      transition: width .22s ease;
     }
 
-    .qtitle{
-      margin: 0 0 10px;
+    .q{
+      margin: 6px 0 12px;
       font-size: 18px;
-      line-height: 1.35;
-      font-weight: 720;
+      line-height: 1.4;
+      font-weight: 800;
+      letter-spacing: .1px;
     }
+
     .answers{
       display:grid;
       gap: 10px;
       margin-top: 10px;
     }
+
     .answer{
-      text-align:left;
       width:100%;
-      padding: 13px 14px;
+      text-align:left;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      color: var(--text);
-      font-weight: 620;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(250,248,245,.95);
+      padding: 14px 14px;
+      font-weight: 750;
+    }
+    .answer:hover{
+      border-color: rgba(185,150,99,.65);
+      background: rgba(255,255,255,.98);
     }
     .answer small{
       display:block;
+      margin-top: 6px;
       color: var(--muted);
-      font-weight: 520;
-      margin-top: 4px;
-      line-height: 1.35;
-    }
-    .answer:hover{
-      border-color: rgba(201,168,106,.45);
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .resultCode{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-weight: 800;
-      letter-spacing: .6px;
-      font-size: 18px;
-      color: var(--gold);
-      background: rgba(201,168,106,.08);
-      border: 1px solid rgba(201,168,106,.25);
+      display:inline-block;
+      margin-top: 10px;
       padding: 10px 12px;
       border-radius: 12px;
-      display:inline-block;
-      margin: 10px 0 0;
-    }
-    .hint{
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-      margin: 10px 0 0;
+      border: 1px solid rgba(185,150,99,.45);
+      background: rgba(185,150,99,.12);
+      color: var(--accent2);
+      font-weight: 900;
+      letter-spacing: .7px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
-    .footer{
-      padding: 14px 26px 22px;
+    footer{
+      padding: 14px 26px 20px;
       border-top: 1px solid var(--line);
+      color: rgba(27,27,27,.55);
+      font-size: 12.5px;
       display:flex;
       justify-content:space-between;
       gap: 12px;
-      color: rgba(255,255,255,.35);
-      font-size: 12.5px;
     }
 
     @media (max-width:520px){
-      .header,.content,.footer{ padding-left:16px; padding-right:16px; }
-      .qtitle{font-size: 16.5px;}
-      button, .answer{border-radius: 12px;}
+      header, main, footer{ padding-left:16px; padding-right:16px; }
+      .q{ font-size: 16.5px; }
+      .answer{ border-radius: 12px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <div class="header">
-        <div class="badge"><span class="dot"></span> Operación Cena Secreta</div>
-        <h1 id="heroTitle">Pablo, enhorabuena 🏆</h1>
-        <p class="subtitle" id="heroText">
-          Me han dicho que te han dado un premio por tu trabajazo estos últimos años.
-          Así que hoy mando yo: <strong>te invito a cenar</strong>.
-          Pero hay una condición… no puedes saber a dónde vamos hasta que lleguemos.
+      <header>
+        <div class="pill"><span class="dot"></span> Operación Cena Secreta</div>
+        <h1>Pablo, enhorabuena 🏆</h1>
+        <p class="lead">
+          Sé que te han dado un premio por tu gran trabajo, y <strong>claro que quiero celebrarlo</strong>.
+          Pero hoy también quiero celebrar <strong>cómo eres conmigo</strong>, lo que construimos,
+          y que eres mi <strong>futuro marido</strong>.
+          Así que… <strong>hoy mando yo</strong>: te invito a cenar.
         </p>
-      </div>
+      </header>
 
-      <div class="content">
-        <div class="panel" id="screenWelcome">
-          <p class="subtitle" style="margin:0 0 12px;">
-            Esto es un mini-juego tipo “due diligence”: respondes <strong>A/B/C</strong> a preguntas rápidas
-            (finanzas, cine, noticias, gym 7:00, relojes, Real Madrid… tú mismo).
+      <main>
+        <!-- Welcome -->
+        <section class="panel" id="screenWelcome">
+          <p class="lead" style="margin:0;">
+            Para elegir el sitio, he preparado un juego rápido: respondes <strong>A / B / C</strong>
+            y al final te sale un <strong>nombre en clave</strong>.
           </p>
           <ul class="rules">
-            <li>Responde sin pensarlo demasiado (máximo 3 segundos).</li>
-            <li>No hay preguntas obvias de “tipo de cocina”.</li>
-            <li>Al final te sale un <strong>nombre en clave</strong>. El nombre real se revela en la puerta.</li>
+            <li>Son 30 preguntas (sí, 30). Te toca disfrutar y obedecer.</li>
+            <li>No hace falta pensar demasiado: el instinto también invierte bien.</li>
+            <li>Al final, yo me encargo de todo.</li>
           </ul>
 
-          <div class="btnrow">
-            <button class="btn-primary" id="btnStart">Empezar</button>
-            <button class="btn-ghost" id="btnPreview">Ver reglas otra vez</button>
+          <div class="row">
+            <button id="btnStart">Empezar</button>
+            <button class="ghost" id="btnRestartFromWelcome">Reiniciar</button>
           </div>
-        </div>
+        </section>
 
-        <div class="panel" id="screenQuiz" style="display:none;">
-          <div class="progressWrap">
-            <span id="stepText">Pregunta 1 de 22</span>
+        <!-- Quiz -->
+        <section class="panel" id="screenQuiz" style="display:none;">
+          <div class="progress">
+            <span id="stepText">Pregunta 1 de 30</span>
             <div class="bar"><div class="fill" id="fill"></div></div>
-            <span id="microHint">A/B/C</span>
+            <span style="min-width:48px;text-align:right;">A/B/C</span>
           </div>
 
-          <h2 class="qtitle" id="qText" style="margin-top:14px;"></h2>
+          <div class="q" id="qText"></div>
           <div class="answers" id="answers"></div>
 
-          <div class="btnrow" style="margin-top:16px;">
-            <button class="btn-ghost" id="btnRestart">Reiniciar</button>
+          <div class="row" style="margin-top:16px;">
+            <button class="ghost" id="btnRestart">Reiniciar</button>
           </div>
-        </div>
+        </section>
 
-        <div class="panel" id="screenResult" style="display:none;">
-          <h2 class="qtitle" style="margin:0;">Resultado aprobado ✅</h2>
-          <p class="subtitle" style="margin:6px 0 0;">
-            El comité ha decidido tu destino. El nombre real se revela <strong>solo al llegar</strong>.
+        <!-- Result -->
+        <section class="panel" id="screenResult" style="display:none;">
+          <div class="q" style="margin:0;">Decisión aprobada ✅</div>
+          <p class="lead" style="margin:8px 0 0;">
+            El comité ha decidido tu destino. Tú solo tienes una misión:
+            <strong>venir y disfrutar</strong>.
           </p>
           <div class="resultCode" id="resultCode">PROYECTO ???</div>
-          <p class="hint" id="resultHint">
-            Instrucción: María anunciará el nombre en clave y tú solo tienes que confiar.
-          </p>
-
-          <div class="btnrow">
-            <button class="btn-primary" id="btnPlayAgain">Jugar otra vez</button>
+          <p class="lead" id="resultHint" style="margin:10px 0 0; font-size:14.5px;"></p>
+          <div class="row">
+            <button id="btnPlayAgain">Jugar otra vez</button>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
 
-      <div class="footer">
-        <span>Hecho con cariño (y un poquito de estrategia).</span>
+      <footer>
+        <span>Hecho con cariño (y estrategia fina).</span>
         <span>© María</span>
-      </div>
+      </footer>
     </div>
   </div>
 
   <script>
-    // -----------------------------
-    // 1) Perfiles y puntuación
-    // -----------------------------
+    // ============================================================
+    // 30 preguntas fijas:
+    //   - 24 base -> puntúan 6 perfiles
+    //   - 6 finales -> eligen el PROYECTO final (solo nombre en clave)
+    // ============================================================
+
     const PROFILES = ["PRIME","PLOT","ENERGIA","PRECISION","CONFORT","EVENTO"];
+    const TOTAL_QUESTIONS = 30;
 
     function freshScores(){
       const s = {};
       PROFILES.forEach(p => s[p] = 0);
       return s;
     }
-
     function addPoints(scores, delta){
       for (const [k,v] of Object.entries(delta)){
         scores[k] = (scores[k] ?? 0) + v;
       }
     }
 
-    // -----------------------------
-    // 2) Preguntas base (18 fijas)
-    //    Cada respuesta añade puntos.
-    // -----------------------------
+    // ---------- 24 PREGUNTAS BASE (intereses de Pablo, sin cocina obvia) ----------
     const baseQuestions = [
-      {
-        id:"Q1",
-        text:"Q1. Hoy, ¿qué te apetece más celebrar?",
+      { text:"Q1. Hoy, ¿qué te apetece más celebrar?",
         answers:[
           {label:"A", text:"El logro profesional (modo premio)", points:{EVENTO:2}},
-          {label:"B", text:"Que estemos a gusto (modo pareja)", points:{CONFORT:2}},
+          {label:"B", text:"Nosotros (modo pareja)", points:{CONFORT:2}},
           {label:"C", text:"Las dos cosas, pero con estilo", points:{PRIME:1, PRECISION:1}},
-        ]
-      },
-      {
-        id:"Q2",
-        text:"Q2. Si mañana compraras un piso, ¿qué priorizarías?",
+        ]},
+      { text:"Q2. Si mañana compraras un piso, ¿qué priorizarías?",
         answers:[
           {label:"A", text:"Ubicación prime: fácil y seguro", points:{PRIME:2}},
-          {label:"B", text:"Potencial: mejorarlo y ganar valor", points:{PLOT:2}},
-          {label:"C", text:"Que funcione perfecto sin trabajo", points:{CONFORT:1, PRECISION:1}},
-        ]
-      },
-      {
-        id:"Q3",
-        text:"Q3. ¿Qué tipo de noticia te engancha más últimamente?",
+          {label:"B", text:"Potencial (value-add): mejorar y ganar valor", points:{PLOT:2}},
+          {label:"C", text:"Que funcione perfecto sin dar trabajo", points:{CONFORT:1, PRECISION:1}},
+        ]},
+      { text:"Q3. ¿Qué tipo de noticia te engancha más últimamente?",
         answers:[
           {label:"A", text:"Economía/mercados: entender qué pasa", points:{PRECISION:2}},
-          {label:"B", text:"Actualidad para debatir y opinar", points:{PRIME:1, PLOT:1}},
+          {label:"B", text:"Actualidad para debatir", points:{PRIME:1, PLOT:1}},
           {label:"C", text:"Ciencia/salud: datos útiles (modo farma)", points:{PRECISION:1, CONFORT:1}},
-        ]
-      },
-      {
-        id:"Q4",
-        text:"Q4. En el cine, ¿qué disfrutas más?",
+        ]},
+      { text:"Q4. En el cine, ¿qué disfrutas más?",
         answers:[
-          {label:"A", text:"Guion perfecto: sin agujeros", points:{PRECISION:2}},
-          {label:"B", text:"Giro bien hecho: ‘no me lo vi venir’", points:{PLOT:2}},
-          {label:"C", text:"Salir con subidón y ganas de aplaudir", points:{ENERGIA:2}},
-        ]
-      },
-      {
-        id:"Q5",
-        text:"Q5. Real Madrid: ¿qué te gusta más ver en un partido?",
+          {label:"A", text:"Guion perfecto (sin agujeros)", points:{PRECISION:2}},
+          {label:"B", text:"Giro bien hecho", points:{PLOT:2}},
+          {label:"C", text:"Salir con subidón", points:{ENERGIA:2}},
+        ]},
+      { text:"Q5. Real Madrid: ¿qué te gusta más ver?",
         answers:[
           {label:"A", text:"Control y estrategia", points:{PRIME:2}},
           {label:"B", text:"Remontada épica", points:{EVENTO:2}},
-          {label:"C", text:"Ataque constante y emoción", points:{ENERGIA:2}},
-        ]
-      },
-      {
-        id:"Q6",
-        text:"Q6. En un reloj, ¿qué te conquista más?",
+          {label:"C", text:"Ataque constante", points:{ENERGIA:2}},
+        ]},
+      { text:"Q6. En un reloj, ¿qué te conquista más?",
         answers:[
           {label:"A", text:"Discreción elegante", points:{PRIME:2}},
-          {label:"B", text:"Mecanismo/historia: precisión bonita", points:{PRECISION:2}},
-          {label:"C", text:"Pieza especial para una ocasión", points:{EVENTO:2}},
-        ]
-      },
-      {
-        id:"Q7",
-        text:"Q7. Mañana hay gym a las 7:00. ¿Cómo quieres levantarte?",
+          {label:"B", text:"Mecanismo/historia (precisión bonita)", points:{PRECISION:2}},
+          {label:"C", text:"Pieza especial para ocasión", points:{EVENTO:2}},
+        ]},
+      { text:"Q7. Mañana hay gym a las 7:00. ¿Cómo quieres levantarte?",
         answers:[
           {label:"A", text:"Ligero y fino", points:{PRECISION:2}},
           {label:"B", text:"Normal, sin drama", points:{CONFORT:2}},
-          {label:"C", text:"Con una sonrisa: hoy se celebra", points:{EVENTO:2}},
-        ]
-      },
-      {
-        id:"Q8",
-        text:"Q8. Para hacer más cardio, ¿qué te motiva más?",
+          {label:"C", text:"Con sonrisa: hoy se celebra", points:{EVENTO:2}},
+        ]},
+      { text:"Q8. Cardio: ¿qué te motiva más?",
         answers:[
-          {label:"A", text:"Métricas y progreso (ritmo, zonas…)", points:{PRECISION:2}},
-          {label:"B", text:"Constancia tranquila: lo que se sostiene", points:{CONFORT:2}},
-          {label:"C", text:"Reto divertido: ‘venga, una más’", points:{ENERGIA:2}},
-        ]
-      },
-      {
-        id:"Q9",
-        text:"Q9. Si esta cena fuera una decisión financiera, ¿qué prefieres?",
+          {label:"A", text:"Métricas y progreso", points:{PRECISION:2}},
+          {label:"B", text:"Constancia tranquila", points:{CONFORT:2}},
+          {label:"C", text:"Reto divertido", points:{ENERGIA:2}},
+        ]},
+      { text:"Q9. Si esta cena fuera una decisión financiera, ¿qué prefieres?",
         answers:[
           {label:"A", text:"Eficiencia: todo bien atado", points:{PRECISION:2}},
-          {label:"B", text:"Ocasión especial: ‘vale cada minuto’", points:{EVENTO:2}},
-          {label:"C", text:"Algo inteligente que sorprende para bien", points:{PLOT:2}},
-        ]
-      },
-      {
-        id:"Q10",
-        text:"Q10. ¿Qué te apetece más hoy?",
+          {label:"B", text:"Ocasión especial: vale la pena", points:{EVENTO:2}},
+          {label:"C", text:"Algo inteligente que sorprende", points:{PLOT:2}},
+        ]},
+      { text:"Q10. ¿Qué te apetece más hoy?",
         answers:[
-          {label:"A", text:"Conversación tranquila sin interrupciones", points:{CONFORT:2}},
+          {label:"A", text:"Conversación tranquila", points:{CONFORT:2}},
           {label:"B", text:"Ambiente vivo (pero agradable)", points:{ENERGIA:2}},
           {label:"C", text:"Un punto ‘wow’ sin estridencias", points:{PRIME:1, EVENTO:1}},
-        ]
-      },
-      {
-        id:"Q11",
-        text:"Q11. En modo ‘director financiero’ en una reunión, ¿qué estilo te sale más?",
+        ]},
+      { text:"Q11. En modo CFO, ¿qué estilo te sale más?",
         answers:[
-          {label:"A", text:"Directo: ‘vamos al grano’", points:{PRECISION:2}},
-          {label:"B", text:"Con humor: tensión cero, foco igual", points:{ENERGIA:2}},
-          {label:"C", text:"Con clase: firme pero elegante", points:{PRIME:2}},
-        ]
-      },
-      {
-        id:"Q12",
-        text:"Q12. De Sri Lanka, ¿qué fue lo mejor para ti?",
+          {label:"A", text:"Directo: vamos al grano", points:{PRECISION:2}},
+          {label:"B", text:"Con humor, pero serio", points:{ENERGIA:2}},
+          {label:"C", text:"Con clase: firme y elegante", points:{PRIME:2}},
+        ]},
+      { text:"Q12. De Sri Lanka, ¿qué fue lo mejor para ti?",
         answers:[
           {label:"A", text:"Descubrir cosas nuevas", points:{PLOT:2}},
           {label:"B", text:"Estar bien sin pensar demasiado", points:{CONFORT:2}},
-          {label:"C", text:"Las historias y recuerdos que te quedan", points:{EVENTO:2}},
-        ]
-      },
-      {
-        id:"Q13",
-        text:"Q13. En el cine, ¿qué asiento elegirías si pudieras?",
+          {label:"C", text:"Las historias y recuerdos", points:{EVENTO:2}},
+        ]},
+      { text:"Q13. En el cine, si pudieras elegir asiento…",
         answers:[
-          {label:"A", text:"Centro perfecto: equilibrio", points:{PRIME:1, PRECISION:1}},
-          {label:"B", text:"Pasillo: práctico y rápido", points:{PRECISION:2}},
-          {label:"C", text:"El ‘mejor disponible’ de última hora", points:{PLOT:2}},
-        ]
-      },
-      {
-        id:"Q14",
-        text:"Q14. ¿Qué frase te gustaría decir al salir hoy?",
+          {label:"A", text:"Centro perfecto (equilibrio)", points:{PRIME:1, PRECISION:1}},
+          {label:"B", text:"Pasillo (práctico)", points:{PRECISION:2}},
+          {label:"C", text:"El mejor disponible de última hora", points:{PLOT:2}},
+        ]},
+      { text:"Q14. ¿Qué frase te gustaría decir al salir hoy?",
         answers:[
-          {label:"A", text:"‘Qué bien cuidado estaba todo’", points:{PRIME:2}},
-          {label:"B", text:"‘Qué divertido ha sido’", points:{ENERGIA:2}},
-          {label:"C", text:"‘Qué sorpresa tan bien pensada’", points:{PLOT:2}},
-        ]
-      },
-      {
-        id:"Q15",
-        text:"Q15. Si te doy una bolsa de tus regalices rojas favoritas, ¿qué harías?",
+          {label:"A", text:"Qué bien cuidado estaba todo", points:{PRIME:2}},
+          {label:"B", text:"Qué divertido ha sido", points:{ENERGIA:2}},
+          {label:"C", text:"Qué sorpresa tan bien pensada", points:{PLOT:2}},
+        ]},
+      { text:"Q15. Si te doy una bolsa de tus regalices rojas favoritas, ¿qué haces?",
         answers:[
-          {label:"A", text:"Me como una y la guardo para luego (control total)", points:{CONFORT:1, PRECISION:1}},
-          {label:"B", text:"La comparto y además pruebo algo distinto hoy", points:{PLOT:2}},
-          {label:"C", text:"Me la acabo feliz: hoy es día de premio", points:{EVENTO:2}},
-        ]
-      },
-      {
-        id:"Q16",
-        text:"Q16. Como CFO, ¿qué te irrita más en un plan?",
+          {label:"A", text:"Una ahora y el resto para luego (control)", points:{CONFORT:1, PRECISION:1}},
+          {label:"B", text:"Comparto y además pruebo algo nuevo hoy", points:{PLOT:2}},
+          {label:"C", text:"Hoy es día especial: me las disfruto", points:{EVENTO:2}},
+        ]},
+      { text:"Q16. Como CFO, ¿qué te irrita más en un plan?",
         answers:[
           {label:"A", text:"Desorden / falta de criterio", points:{PRECISION:2}},
           {label:"B", text:"Frialdad: cero humanidad", points:{CONFORT:2}},
           {label:"C", text:"Que sea plano: sin emoción", points:{ENERGIA:1, EVENTO:1}},
-        ]
-      },
-      {
-        id:"Q17",
-        text:"Q17. Para la boda 2027, ¿qué tono te imaginas más?",
+        ]},
+      { text:"Q17. Boda 2027: ¿qué tono te imaginas más?",
         answers:[
           {label:"A", text:"Clásico elegante", points:{PRIME:2}},
           {label:"B", text:"Emotivo y familiar", points:{CONFORT:2}},
           {label:"C", text:"Fiesta con momentazo", points:{EVENTO:2}},
-        ]
-      },
-      {
-        id:"Q18",
-        text:"Q18. Cuando vivamos en Terrassa, un sábado ideal sería…",
+        ]},
+      { text:"Q18. Cuando vivamos en Terrassa, un sábado ideal sería…",
         answers:[
           {label:"A", text:"Tranquilo, calidad sin prisa", points:{CONFORT:2}},
           {label:"B", text:"Con actividad y movimiento", points:{ENERGIA:2}},
           {label:"C", text:"Plan especial de pareja", points:{PRIME:1, EVENTO:1}},
-        ]
-      },
+        ]},
+      { text:"Q19. En noticias, ¿qué te gusta más hacer?",
+        answers:[
+          {label:"A", text:"Quedarme con 3 ideas clave", points:{PRECISION:2}},
+          {label:"B", text:"Debatir: pros y contras", points:{PLOT:1, PRIME:1}},
+          {label:"C", text:"Mandarte el titular ‘esto eres tú’", points:{CONFORT:2}},
+        ]},
+      { text:"Q20. Si tuvieras que elegir un ‘ritual’ semanal, ¿cuál?",
+        answers:[
+          {label:"A", text:"Plan de pareja fijo (cuidarnos)", points:{CONFORT:2}},
+          {label:"B", text:"Plan de celebración (como mini-premio)", points:{EVENTO:2}},
+          {label:"C", text:"Plan eficiente (rápido y perfecto)", points:{PRECISION:2}},
+        ]},
+      { text:"Q21. En inmobiliario, ¿qué te parece más ‘sexy’?",
+        answers:[
+          {label:"A", text:"Una operación impecable (papeles perfectos)", points:{PRECISION:2}},
+          {label:"B", text:"Detectar una oportunidad antes que otros", points:{PLOT:2}},
+          {label:"C", text:"Un activo sólido que da paz", points:{PRIME:2}},
+        ]},
+      { text:"Q22. Si hoy fuera una película vuestra, ¿qué género gana?",
+        answers:[
+          {label:"A", text:"Romcom elegante", points:{CONFORT:2}},
+          {label:"B", text:"Heist inteligente (plan maestro)", points:{PLOT:2}},
+          {label:"C", text:"Épica de premio", points:{EVENTO:2}},
+        ]},
+      { text:"Q23. Cuando alguien te reconoce el trabajo, tú prefieres…",
+        answers:[
+          {label:"A", text:"Discreción: gracias y seguimos", points:{PRIME:2}},
+          {label:"B", text:"Celebrarlo un poco", points:{EVENTO:2}},
+          {label:"C", text:"Que sea significativo, no grande", points:{CONFORT:1, PRECISION:1}},
+        ]},
+      { text:"Q24. ¿Qué te parece un plan perfecto hoy?",
+        answers:[
+          {label:"A", text:"Elegante y redondo", points:{PRIME:2}},
+          {label:"B", text:"Divertido y ligero", points:{ENERGIA:2}},
+          {label:"C", text:"Interesante y sorprendente", points:{PLOT:2}},
+        ]},
     ];
 
-    // Tie-breaker (solo si hay empate tras Q18)
-    const tieBreaker = {
-      id:"Q19",
-      text:"Q19 (desempate). ¿Qué prefieres que pase hoy sí o sí?",
-      answers:[
-        {label:"A", text:"Que salga todo impecable", points:{PRIME:2}},
-        {label:"B", text:"Que os sorprenda para bien", points:{PLOT:2}},
-        {label:"C", text:"Que sea un momentazo", points:{EVENTO:2}},
-      ]
-    };
+    // ---------- 6 PREGUNTAS FINALES (siempre 6) ----------
+    // En vez de un árbol corto, hacemos una “segunda vuelta” que elige el PROYECTO (solo clave).
+    // Aquí solo salen códigos de proyecto, no nombres reales.
+    const finalQuestions = [
+      { text:"Q25. Para esta noche, ¿qué te apetece priorizar?",
+        answers:[
+          {label:"A", text:"Elegancia discreta", map:{PRIME:["ALFA","ORIÓN","COBALTO","GAMMA"]}},
+          {label:"B", text:"Sorpresa con criterio", map:{PLOT:["HELIO","IOTA","THETA","ZETA","ETA"]}},
+          {label:"C", text:"Celebración con energía", map:{ENERGIA:["QUÓRUM","LAMBDA","EPSILON","PI","NU","KAPPA"]}},
+        ]},
+      { text:"Q26. ¿Cómo quieres sentirte al salir?",
+        answers:[
+          {label:"A", text:"‘Qué nivel’", map:{PRECISION:["COBALTO","KAPPA","HELIO","MU"]}},
+          {label:"B", text:"‘Qué bien he estado’", map:{CONFORT:["DELTA","GAMMA","ORIÓN","OMICRON","ALFA"]}},
+          {label:"C", text:"‘Qué planazo’", map:{EVENTO:["XI","COBALTO","KAPPA","PI","NU","LAMBDA"]}},
+        ]},
+      { text:"Q27. Si esto fuera un reloj, hoy sería más…",
+        answers:[
+          {label:"A", text:"Clásico eterno", map:{PRIME:["ALFA","DELTA","ORIÓN"]}},
+          {label:"B", text:"Pieza especial", map:{EVENTO:["XI","COBALTO","KAPPA"]}},
+          {label:"C", text:"Ingeniería bonita", map:{PRECISION:["HELIO","COBALTO","MU","KAPPA"]}},
+        ]},
+      { text:"Q28. Si esto fuera una inversión, ¿qué te ilusiona más?",
+        answers:[
+          {label:"A", text:"Prime seguro", map:{PRIME:["ALFA","DELTA","GAMMA"]}},
+          {label:"B", text:"Value-add con cabeza", map:{PLOT:["IOTA","THETA","ZETA","ETA"]}},
+          {label:"C", text:"‘Capricho’ muy bien elegido", map:{EVENTO:["XI","KAPPA","COBALTO","NU"]}},
+        ]},
+      { text:"Q29. Para un plan de pareja, ¿qué encaja más hoy?",
+        answers:[
+          {label:"A", text:"Íntimo y bonito", map:{CONFORT:["ORIÓN","OMICRON","GAMMA","DELTA"]}},
+          {label:"B", text:"Elegante y especial", map:{PRIME:["ALFA","COBALTO","XI"]}},
+          {label:"C", text:"Divertido y con chispa", map:{ENERGIA:["QUÓRUM","EPSILON","LAMBDA"]}},
+        ]},
+      { text:"Q30. Última: ¿qué te apetece más ahora mismo?",
+        answers:[
+          {label:"A", text:"Plan impecable", map:{PRECISION:["COBALTO","HELIO","MU","KAPPA"]}},
+          {label:"B", text:"Plan con personalidad", map:{PLOT:["ETA","ZETA","THETA","EPSILON","IOTA"]}},
+          {label:"C", text:"Plan de premio", map:{EVENTO:["XI","KAPPA","PI","NU"]}},
+        ]},
+    ];
 
-    // -----------------------------
-    // 3) Finales (árbol corto por perfil ganador)
-    // Cada final termina en un CODENAME.
-    // (No incluimos aquí la chuleta de restaurantes reales para que Pablo no la vea.)
-    // -----------------------------
-    const finals = {
-      PRIME: [
-        {
-          id:"Q20P",
-          text:"Q20. ¿Qué tipo de elegancia te apetece hoy?",
-          answers:[
-            {label:"A", text:"Discreción total", next:"Q21P"},
-            {label:"B", text:"Elegancia moderna", next:"Q22P"},
-            {label:"C", text:"Elegancia con ‘toque especial’", next:"Q23P"},
-          ]
-        },
-        {
-          id:"Q21P",
-          text:"Q21. ¿Te gustan más los planes…?",
-          answers:[
-            {label:"A", text:"Muy íntimos", result:"PROYECTO ORIÓN"},
-            {label:"B", text:"Muy redondos y cuidados", result:"PROYECTO ALFA"},
-            {label:"C", text:"(No hay C) — el comité te ve indeciso 😄", result:"PROYECTO ALFA"}
-          ]
-        },
-        {
-          id:"Q22P",
-          text:"Q22. Hoy te tira más…",
-          answers:[
-            {label:"A", text:"Ciudad y contemporáneo", result:"PROYECTO GAMMA"},
-            {label:"B", text:"Clásico con personalidad", result:"PROYECTO DELTA"},
-            {label:"C", text:"Algo impecable y top", result:"PROYECTO COBALTO"},
-          ]
-        },
-        {
-          id:"Q23P",
-          text:"Q23. El detalle que te gana es…",
-          answers:[
-            {label:"A", text:"Servicio finísimo", result:"PROYECTO COBALTO"},
-            {label:"B", text:"Estética y glamour", result:"PROYECTO XI"},
-            {label:"C", text:"Ambiente muy cuidado", result:"PROYECTO ORIÓN"},
-          ]
-        },
-      ],
+    // Para elegir PROYECTO final: acumulamos “votos” por código (solo en finales).
+    function freshVotes(){ return {}; }
+    function vote(votes, code, n=1){ votes[code] = (votes[code]||0) + n; }
+    function pickWinner(votes){
+      const entries = Object.entries(votes);
+      if (!entries.length) return "PROYECTO ALFA";
+      entries.sort((a,b)=> b[1]-a[1]);
+      const topScore = entries[0][1];
+      const top = entries.filter(e=> e[1]===topScore).map(e=>e[0]);
 
-      PLOT: [
-        {
-          id:"Q20L",
-          text:"Q20. ¿Qué tipo de sorpresa te gusta más?",
-          answers:[
-            {label:"A", text:"‘No lo habría elegido yo, y me encanta’", next:"Q21L"},
-            {label:"B", text:"‘Me hace gracia y tiene rollo’", next:"Q22L"},
-            {label:"C", text:"‘Me sorprende por nivel’", next:"Q23L"},
-          ]
-        },
-        {
-          id:"Q21L",
-          text:"Q21. ¿La sorpresa te gusta más tipo…?",
-          answers:[
-            {label:"A", text:"‘Viaje sin moverse’", result:"PROYECTO ETA"},
-            {label:"B", text:"Mezcla inesperada", result:"PROYECTO IOTA"},
-            {label:"C", text:"Un giro creativo", result:"PROYECTO THETA"},
-          ]
-        },
-        {
-          id:"Q22L",
-          text:"Q22. ¿Te apetece un punto más…?",
-          answers:[
-            {label:"A", text:"Urbano y travieso", result:"PROYECTO EPSILON"},
-            {label:"B", text:"Barrio con carácter", result:"PROYECTO ZETA"},
-            {label:"C", text:"Divertido y moderno", result:"PROYECTO LAMBDA"},
-          ]
-        },
-        {
-          id:"Q23L",
-          text:"Q23. ¿Qué te gana más: creatividad o perfección?",
-          answers:[
-            {label:"A", text:"Creatividad medida", result:"PROYECTO HELIO"},
-            {label:"B", text:"Giro inesperado", result:"PROYECTO THETA"},
-            {label:"C", text:"Nivel altísimo sin ruido", result:"PROYECTO COBALTO"},
-          ]
-        },
-      ],
+      // desempate fijo para que sea estable
+      const priority = ["COBALTO","KAPPA","ALFA","HELIO","XI","DELTA","GAMMA","ORIÓN","LAMBDA","QUÓRUM","ETA","ZETA","THETA","IOTA","MU","OMICRON","EPSILON","PI","NU"];
+      top.sort((a,b)=> priority.indexOf(a)-priority.indexOf(b));
+      return "PROYECTO " + top[0];
+    }
 
-      ENERGIA: [
-        {
-          id:"Q20E",
-          text:"Q20. ¿Cómo quieres el ambiente hoy?",
-          answers:[
-            {label:"A", text:"Animado pero cómodo", next:"Q21E"},
-            {label:"B", text:"Animado y potente", next:"Q22E"},
-            {label:"C", text:"Animado y moderno", next:"Q23E"},
-          ]
-        },
-        {
-          id:"Q21E",
-          text:"Q21. ¿Qué tipo de plan te hace más feliz hoy?",
-          answers:[
-            {label:"A", text:"Risas + comer muy bien", result:"PROYECTO QUÓRUM"},
-            {label:"B", text:"Energía con toque sofisticado", result:"PROYECTO KAPPA"},
-            {label:"C", text:"Algo distinto pero fácil de disfrutar", result:"PROYECTO EPSILON"},
-          ]
-        },
-        {
-          id:"Q22E",
-          text:"Q22. Para celebrar, ¿qué te apetece más?",
-          answers:[
-            {label:"A", text:"Sensación de festín", result:"PROYECTO PI"},
-            {label:"B", text:"Plan con carácter y brasa elegante", result:"PROYECTO NU"},
-            {label:"C", text:"Plan moderno y con ritmo", result:"PROYECTO LAMBDA"},
-          ]
-        },
-        {
-          id:"Q23E",
-          text:"Q23. ¿Lo prefieres más…?",
-          answers:[
-            {label:"A", text:"Moderno con ritmo", result:"PROYECTO LAMBDA"},
-            {label:"B", text:"Con chispa creativa", result:"PROYECTO EPSILON"},
-            {label:"C", text:"Con final ‘wow’", result:"PROYECTO KAPPA"},
-          ]
-        },
-      ],
-
-      PRECISION: [
-        {
-          id:"Q20R",
-          text:"Q20. ¿Cómo te gusta que esté diseñado el plan?",
-          answers:[
-            {label:"A", text:"Foco y claridad", next:"Q21R"},
-            {label:"B", text:"Producto impecable", next:"Q22R"},
-            {label:"C", text:"Un guion perfecto (sin relleno)", next:"Q23R"},
-          ]
-        },
-        {
-          id:"Q21R",
-          text:"Q21. ¿Te apetece algo más…?",
-          answers:[
-            {label:"A", text:"Pequeño y afinado", result:"PROYECTO OMICRON"},
-            {label:"B", text:"Contemporáneo y medido", result:"PROYECTO GAMMA"},
-            {label:"C", text:"Elegante sin ruido", result:"PROYECTO ALFA"},
-          ]
-        },
-        {
-          id:"Q22R",
-          text:"Q22. ¿Prefieres precisión con…?",
-          answers:[
-            {label:"A", text:"Nivel premium y muy cuidado", result:"PROYECTO COBALTO"},
-            {label:"B", text:"Personalidad y producto", result:"PROYECTO MU"},
-            {label:"C", text:"Final de ‘qué nivel’", result:"PROYECTO KAPPA"},
-          ]
-        },
-        {
-          id:"Q23R",
-          text:"Q23. ¿Te apetece precisión con…?",
-          answers:[
-            {label:"A", text:"Creatividad bien medida", result:"PROYECTO HELIO"},
-            {label:"B", text:"Mezcla de estilos con sentido", result:"PROYECTO KAPPA"},
-            {label:"C", text:"Redondez absoluta", result:"PROYECTO DELTA"},
-          ]
-        },
-      ],
-
-      CONFORT: [
-        {
-          id:"Q20C",
-          text:"Q20. ¿Qué plan te encaja más hoy?",
-          answers:[
-            {label:"A", text:"Hablar tranquilos y salir felices", next:"Q21C"},
-            {label:"B", text:"Comodidad total: cero pensar", next:"Q22C"},
-            {label:"C", text:"Acogedor pero con nivel", next:"Q23C"},
-          ]
-        },
-        {
-          id:"Q21C",
-          text:"Q21. ¿Tu confort es más…?",
-          answers:[
-            {label:"A", text:"Cálido y con alma", result:"PROYECTO DELTA"},
-            {label:"B", text:"Bistró cómodo y elegante", result:"PROYECTO GAMMA"},
-            {label:"C", text:"Pareja tranquila, plan fino", result:"PROYECTO ALFA"},
-          ]
-        },
-        {
-          id:"Q22C",
-          text:"Q22. ¿Prefieres confort…?",
-          answers:[
-            {label:"A", text:"Pequeño y tranquilo", result:"PROYECTO OMICRON"},
-            {label:"B", text:"Tranquilo pero con carácter", result:"PROYECTO ORIÓN"},
-            {label:"C", text:"Con chispa sin ruido", result:"PROYECTO GAMMA"},
-          ]
-        },
-        {
-          id:"Q23C",
-          text:"Q23. ¿Qué te gana más hoy?",
-          answers:[
-            {label:"A", text:"Sensación de ‘hogar pro’", result:"PROYECTO DELTA"},
-            {label:"B", text:"Sensación de ‘pareja premium’", result:"PROYECTO ALFA"},
-            {label:"C", text:"Redondez y calma", result:"PROYECTO ORIÓN"},
-          ]
-        },
-      ],
-
-      EVENTO: [
-        {
-          id:"Q20V",
-          text:"Q20. ¿Qué tipo de ‘evento’ quieres que sea la noche?",
-          answers:[
-            {label:"A", text:"Glamour e impacto", next:"Q21V"},
-            {label:"B", text:"Nivel gastronómico", next:"Q22V"},
-            {label:"C", text:"Celebración contundente", next:"Q23V"},
-          ]
-        },
-        {
-          id:"Q21V",
-          text:"Q21. Para ti, glamour es…",
-          answers:[
-            {label:"A", text:"Plan grande con estética top", result:"PROYECTO XI"},
-            {label:"B", text:"Elegancia discreta de altísimo nivel", result:"PROYECTO COBALTO"},
-            {label:"C", text:"Celebración fina sin ruido", result:"PROYECTO ALFA"},
-          ]
-        },
-        {
-          id:"Q22V",
-          text:"Q22. Para ti, nivel gastronómico es…",
-          answers:[
-            {label:"A", text:"Producto premium impecable", result:"PROYECTO KAPPA"},
-            {label:"B", text:"Técnica + creatividad bien pensada", result:"PROYECTO HELIO"},
-            {label:"C", text:"Plan perfecto y redondo", result:"PROYECTO DELTA"},
-          ]
-        },
-        {
-          id:"Q23V",
-          text:"Q23. Para celebrar a lo grande, ¿qué te apetece más?",
-          answers:[
-            {label:"A", text:"Potencia y brasa", result:"PROYECTO PI"},
-            {label:"B", text:"Carácter con final ‘wow’", result:"PROYECTO NU"},
-            {label:"C", text:"Energía moderna", result:"PROYECTO LAMBDA"},
-          ]
-        },
-      ],
-    };
-
-    // -----------------------------
-    // 4) UI + Motor del test
-    // -----------------------------
+    // ---------- UI ----------
     const screenWelcome = document.getElementById("screenWelcome");
     const screenQuiz = document.getElementById("screenQuiz");
     const screenResult = document.getElementById("screenResult");
-
     const btnStart = document.getElementById("btnStart");
-    const btnPreview = document.getElementById("btnPreview");
+    const btnRestartFromWelcome = document.getElementById("btnRestartFromWelcome");
     const btnRestart = document.getElementById("btnRestart");
     const btnPlayAgain = document.getElementById("btnPlayAgain");
-
     const qText = document.getElementById("qText");
     const answersEl = document.getElementById("answers");
     const stepText = document.getElementById("stepText");
@@ -762,204 +555,139 @@
     const resultCode = document.getElementById("resultCode");
     const resultHint = document.getElementById("resultHint");
 
-    let scores, phase, baseIndex, currentFinalId, finalProfile, tieAsked;
+    let scores, votes, idx, phase, topProfile;
 
-    function resetGame(){
+    function reset(){
       scores = freshScores();
-      phase = "welcome";     // welcome | base | tie | final | done
-      baseIndex = 0;
-      currentFinalId = null;
-      finalProfile = null;
-      tieAsked = false;
+      votes = freshVotes();
+      idx = 0;
+      phase = "welcome"; // welcome | base | final | done
+      topProfile = null;
 
       screenWelcome.style.display = "";
       screenQuiz.style.display = "none";
       screenResult.style.display = "none";
+      fill.style.width = "0%";
+      stepText.textContent = `Pregunta 1 de ${TOTAL_QUESTIONS}`;
     }
 
     function showQuiz(){
+      phase = "base";
       screenWelcome.style.display = "none";
       screenQuiz.style.display = "";
       screenResult.style.display = "none";
-      phase = "base";
+      idx = 0;
       render();
     }
 
-    function getProgress(){
-      // total steps shown to user: 18 base + (0/1 tie) + 3 final approx.
-      // We'll compute dynamically for a smooth bar.
-      let shown = 0;
-      if (phase === "base") shown = baseIndex;
-      if (phase === "tie") shown = 18;
-      if (phase === "final") shown = 18 + (tieAsked ? 1 : 0) + countFinalAnswered();
-      if (phase === "done") shown = 18 + (tieAsked ? 1 : 0) + 3;
-      const total = 22; // target feel (21-22)
-      return {shown, total};
-    }
-
-    function countFinalAnswered(){
-      // We can approximate by counting how many final questions we've advanced past.
-      // For UI purposes only.
-      if (!currentFinalId) return 0;
-      const list = finals[finalProfile] || [];
-      const idx = list.findIndex(q => q.id === currentFinalId);
-      return Math.max(0, idx);
+    function computeTopProfile(){
+      const entries = Object.entries(scores);
+      const max = Math.max(...entries.map(e=>e[1]));
+      const top = entries.filter(e=>e[1]===max).map(e=>e[0]);
+      const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
+      top.sort((a,b)=> priority.indexOf(a)-priority.indexOf(b));
+      return top[0];
     }
 
     function render(){
-      const {shown, total} = getProgress();
-      const stepNumber = Math.min(shown + 1, total);
-      stepText.textContent = `Pregunta ${stepNumber} de ${total}`;
-      fill.style.width = `${Math.min(100, Math.round((shown/total)*100))}%`;
-
+      const step = idx + 1;
+      stepText.textContent = `Pregunta ${step} de ${TOTAL_QUESTIONS}`;
+      fill.style.width = `${Math.round(((step-1)/TOTAL_QUESTIONS)*100)}%`;
       answersEl.innerHTML = "";
 
       if (phase === "base"){
-        const q = baseQuestions[baseIndex];
+        const q = baseQuestions[idx];
         qText.textContent = q.text;
-        q.answers.forEach((a) => {
-          const btn = document.createElement("button");
-          btn.className = "answer";
-          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
-          btn.onclick = () => {
+        q.answers.forEach(a=>{
+          const b = document.createElement("button");
+          b.className = "answer";
+          b.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
+          b.onclick = ()=>{
             addPoints(scores, a.points);
-            baseIndex++;
-            if (baseIndex >= baseQuestions.length){
-              decideAfterBase();
+            idx++;
+            if (idx >= baseQuestions.length){
+              topProfile = computeTopProfile();
+              phase = "final";
+              idx = baseQuestions.length; // continue counting 25..30
+              render();
             } else {
               render();
             }
           };
-          answersEl.appendChild(btn);
-        });
-        return;
-      }
-
-      if (phase === "tie"){
-        qText.textContent = tieBreaker.text;
-        tieBreaker.answers.forEach(a => {
-          const btn = document.createElement("button");
-          btn.className = "answer";
-          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
-          btn.onclick = () => {
-            addPoints(scores, a.points);
-            tieAsked = true;
-            decideFinalProfile(); // now pick profile and start finals
-          };
-          answersEl.appendChild(btn);
+          answersEl.appendChild(b);
         });
         return;
       }
 
       if (phase === "final"){
-        const q = (finals[finalProfile] || []).find(x => x.id === currentFinalId);
-        if (!q){
-          // safety fallback
-          finishWith("PROYECTO ALFA");
-          return;
-        }
+        const finalIdx = idx - baseQuestions.length; // 0..5
+        const q = finalQuestions[finalIdx];
         qText.textContent = q.text;
-        q.answers.forEach(a => {
-          const btn = document.createElement("button");
-          btn.className = "answer";
-          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
-          btn.onclick = () => {
-            if (a.result){
-              finishWith(a.result);
-            } else if (a.next){
-              currentFinalId = a.next;
-              render();
+
+        q.answers.forEach(a=>{
+          const b = document.createElement("button");
+          b.className = "answer";
+          // pequeño subtítulo para que se note el tono, sin revelar nada
+          b.innerHTML = `<strong>${a.label})</strong> ${a.text}<small>Decisión registrada.</small>`;
+          b.onclick = ()=>{
+            // Vota por códigos según el perfil dominante que salió en base
+            const list = (a.map[topProfile] || []);
+            // peso extra al perfil dominante (para que tenga sentido)
+            list.forEach(code => vote(votes, code, 2));
+
+            // y un peso ligero a perfiles “vecinos” para que no sea rígido
+            // (esto hace el resultado más estable y divertido)
+            if (topProfile === "EVENTO" || topProfile === "ENERGIA") {
+              (a.map["EVENTO"]||[]).forEach(code=>vote(votes, code, 1));
+              (a.map["ENERGIA"]||[]).forEach(code=>vote(votes, code, 1));
+            } else if (topProfile === "PRIME" || topProfile === "PRECISION") {
+              (a.map["PRIME"]||[]).forEach(code=>vote(votes, code, 1));
+              (a.map["PRECISION"]||[]).forEach(code=>vote(votes, code, 1));
             } else {
-              finishWith("PROYECTO ALFA");
+              (a.map["PLOT"]||[]).forEach(code=>vote(votes, code, 1));
+              (a.map["CONFORT"]||[]).forEach(code=>vote(votes, code, 1));
+            }
+
+            idx++;
+            if (idx >= TOTAL_QUESTIONS){
+              finish();
+            } else {
+              render();
             }
           };
-          answersEl.appendChild(btn);
+          answersEl.appendChild(b);
         });
         return;
       }
     }
 
-    function decideAfterBase(){
-      // Determine top score(s)
-      const entries = Object.entries(scores);
-      const max = Math.max(...entries.map(e => e[1]));
-      const top = entries.filter(e => e[1] === max).map(e => e[0]);
-
-      if (top.length === 1){
-        finalProfile = top[0];
-        startFinal();
-      } else {
-        // Ask tie breaker
-        phase = "tie";
-        render();
-      }
-    }
-
-    function decideFinalProfile(){
-      const entries = Object.entries(scores);
-      const max = Math.max(...entries.map(e => e[1]));
-      const top = entries.filter(e => e[1] === max).map(e => e[0]);
-
-      // If still tied, pick the one that appears first in this priority list.
-      const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
-      finalProfile = top.sort((a,b) => priority.indexOf(a) - priority.indexOf(b))[0];
-      startFinal();
-    }
-
-    function startFinal(){
-      phase = "final";
-      // pick first node of that profile
-      const list = finals[finalProfile] || [];
-      currentFinalId = list.length ? list[0].id : null;
-      render();
-    }
-
-    function finishWith(code){
+    function finish(){
       phase = "done";
       screenQuiz.style.display = "none";
-      screenWelcome.style.display = "none";
       screenResult.style.display = "";
+      fill.style.width = "100%";
+
+      const code = pickWinner(votes);
       resultCode.textContent = code;
 
-      // A little tailored closing line based on profile:
-      const closing = {
-        PRIME: "Destino con elegancia, de los que un reloj discreto aprobaría.",
-        PLOT: "Destino con giro inteligente: hoy gana el ‘no me lo esperaba’.",
-        ENERGIA: "Destino con ritmo: celebración con sonrisa garantizada.",
-        PRECISION: "Destino de precisión: criterio y detalle, como te gusta.",
-        CONFORT: "Destino para hablar y estar bien: pareja y futuro en modo bonito.",
-        EVENTO: "Destino ‘premio’: hoy toca plan grande, sin medias tintas."
+      const lines = {
+        PRIME: "Perfil ganador: elegancia tranquila. Hoy toca plan fino y bien elegido.",
+        PLOT: "Perfil ganador: sorpresa con criterio. Hoy gana el ‘qué buena idea’.",
+        ENERGIA: "Perfil ganador: energía. Hoy toca disfrutar y reír, sin complicarse.",
+        PRECISION: "Perfil ganador: precisión. Hoy gana el detalle y el buen gusto.",
+        CONFORT: "Perfil ganador: confort. Hoy toca estar bien y celebrar lo nuestro.",
+        EVENTO: "Perfil ganador: evento. Hoy toca noche de premio, sin medias tintas."
       };
-      resultHint.textContent = closing[finalProfile] || "Destino asignado. Confía en María.";
-
-      // reset progress bar to 100
-      fill.style.width = "100%";
+      resultHint.textContent = lines[topProfile] || "Decisión tomada. Confía en María.";
     }
 
-    // -----------------------------
-    // 5) Botones
-    // -----------------------------
-    btnStart.addEventListener("click", () => {
-      showQuiz();
-    });
+    // ---------- buttons ----------
+    btnStart.addEventListener("click", showQuiz);
+    btnRestartFromWelcome.addEventListener("click", reset);
+    btnRestart.addEventListener("click", ()=>{ reset(); showQuiz(); });
+    btnPlayAgain.addEventListener("click", ()=>{ reset(); showQuiz(); });
 
-    btnPreview.addEventListener("click", () => {
-      // just re-shows the welcome, nothing else
-      screenWelcome.scrollIntoView({behavior:"smooth", block:"start"});
-    });
-
-    btnRestart.addEventListener("click", () => {
-      resetGame();
-      showQuiz();
-    });
-
-    btnPlayAgain.addEventListener("click", () => {
-      resetGame();
-      showQuiz();
-    });
-
-    // init
-    resetGame();
+    reset();
   </script>
 </body>
 </html>
