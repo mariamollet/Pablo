@@ -6,16 +6,19 @@
   <title>Operación Cena Secreta</title>
   <style>
     :root{
-      --bg: #f6f1e8;        /* beige suave */
-      --paper: #ffffff;     /* tarjeta */
-      --ink: #1b1b1b;       /* texto principal */
-      --muted: #5f5a52;     /* texto secundario */
-      --line: #e8dfd2;      /* líneas */
-      --accent: #b99663;    /* dorado-beige */
-      --accent2:#8a7352;    /* acento oscuro */
+      --bg: #f6f1e8;
+      --paper: #ffffff;
+      --ink: #1b1b1b;
+      --muted: #5f5a52;
+      --line: #e8dfd2;
+      --accent: #b99663;
+      --accent2:#8a7352;
       --shadow: 0 12px 36px rgba(22,18,12,.08);
-      --r: 18px;
-      --r2: 14px;
+
+      /* sin bordes redondeados */
+      --r: 0px;
+      --r2: 0px;
+
       --maxw: 880px;
       --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -58,7 +61,7 @@
       gap:10px;
       padding: 8px 12px;
       border: 1px solid rgba(185,150,99,.35);
-      border-radius: 999px;
+      border-radius: 999px; /* pill sí, no es rectángulo */
       color: var(--accent2);
       background: rgba(185,150,99,.10);
       font-weight: 650;
@@ -124,7 +127,7 @@
 
     button{
       font-family: inherit;
-      border-radius: 999px;
+      border-radius: 999px; /* botones tipo píldora */
       border: 1px solid rgba(185,150,99,.45);
       background: linear-gradient(180deg, rgba(185,150,99,.20), rgba(185,150,99,.10));
       color: var(--ink);
@@ -150,7 +153,6 @@
     .ghost:hover{
       border-color: rgba(0,0,0,.16);
       background: rgba(0,0,0,.03);
-      transform: translateY(-1px);
     }
 
     .progress{
@@ -194,7 +196,7 @@
     .answer{
       width:100%;
       text-align:left;
-      border-radius: 14px;
+      border-radius: 0px; /* sin redondeo */
       border: 1px solid rgba(0,0,0,.08);
       background: rgba(250,248,245,.95);
       padding: 14px 14px;
@@ -204,19 +206,12 @@
       border-color: rgba(185,150,99,.65);
       background: rgba(255,255,255,.98);
     }
-    .answer small{
-      display:block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 600;
-      line-height: 1.4;
-    }
 
     .resultCode{
       display:inline-block;
       margin-top: 10px;
       padding: 10px 12px;
-      border-radius: 12px;
+      border-radius: 0px; /* sin redondeo */
       border: 1px solid rgba(185,150,99,.45);
       background: rgba(185,150,99,.12);
       color: var(--accent2);
@@ -238,7 +233,6 @@
     @media (max-width:520px){
       header, main, footer{ padding-left:16px; padding-right:16px; }
       .q{ font-size: 16.5px; }
-      .answer{ border-radius: 12px; }
     }
   </style>
 </head>
@@ -257,16 +251,15 @@
       </header>
 
       <main>
-        <!-- Welcome -->
         <section class="panel" id="screenWelcome">
           <p class="lead" style="margin:0;">
-            Para elegir el sitio, he preparado un juego rápido: respondes <strong>A / B / C</strong>
-            y al final te sale un <strong>nombre en clave</strong>.
+            Para elegir el sitio, he preparado un juego: respondes <strong>A / B / C</strong>
+            y al final aparece un <strong>nombre en clave</strong>.
           </p>
           <ul class="rules">
-            <li>Son 30 preguntas (sí, 30). Te toca disfrutar y obedecer.</li>
-            <li>No hace falta pensar demasiado: el instinto también invierte bien.</li>
-            <li>Al final, yo me encargo de todo.</li>
+            <li>Son 30 preguntas. Sí: 30.</li>
+            <li>Responde como te salga.</li>
+            <li>Yo me encargo del resto.</li>
           </ul>
 
           <div class="row">
@@ -275,7 +268,6 @@
           </div>
         </section>
 
-        <!-- Quiz -->
         <section class="panel" id="screenQuiz" style="display:none;">
           <div class="progress">
             <span id="stepText">Pregunta 1 de 30</span>
@@ -291,12 +283,10 @@
           </div>
         </section>
 
-        <!-- Result -->
         <section class="panel" id="screenResult" style="display:none;">
           <div class="q" style="margin:0;">Decisión aprobada ✅</div>
           <p class="lead" style="margin:8px 0 0;">
-            El comité ha decidido tu destino. Tú solo tienes una misión:
-            <strong>venir y disfrutar</strong>.
+            Misión: venir y disfrutar. Yo ya tengo el plan.
           </p>
           <div class="resultCode" id="resultCode">PROYECTO ???</div>
           <p class="lead" id="resultHint" style="margin:10px 0 0; font-size:14.5px;"></p>
@@ -308,7 +298,7 @@
 
       <footer>
         <span>Hecho con cariño (y estrategia fina).</span>
-        <span>© María</span>
+        <span>© Maria</span>
       </footer>
     </div>
   </div>
@@ -317,7 +307,7 @@
     // ============================================================
     // 30 preguntas fijas:
     //   - 24 base -> puntúan 6 perfiles
-    //   - 6 finales -> eligen el PROYECTO final (solo nombre en clave)
+    //   - 6 finales -> eligen PROYECTO con reparto casi uniforme
     // ============================================================
 
     const PROFILES = ["PRIME","PLOT","ENERGIA","PRECISION","CONFORT","EVENTO"];
@@ -334,7 +324,7 @@
       }
     }
 
-    // ---------- 24 PREGUNTAS BASE (intereses de Pablo, sin cocina obvia) ----------
+    // 24 base
     const baseQuestions = [
       { text:"Q1. Hoy, ¿qué te apetece más celebrar?",
         answers:[
@@ -448,19 +438,19 @@
         answers:[
           {label:"A", text:"Quedarme con 3 ideas clave", points:{PRECISION:2}},
           {label:"B", text:"Debatir: pros y contras", points:{PLOT:1, PRIME:1}},
-          {label:"C", text:"Mandarte el titular ‘esto eres tú’", points:{CONFORT:2}},
+          {label:"C", text:"Mandarme el ‘esto eres tú’", points:{CONFORT:2}},
         ]},
-      { text:"Q20. Si tuvieras que elegir un ‘ritual’ semanal, ¿cuál?",
+      { text:"Q20. Si eliges un ritual semanal, ¿cuál?",
         answers:[
           {label:"A", text:"Plan de pareja fijo (cuidarnos)", points:{CONFORT:2}},
-          {label:"B", text:"Plan de celebración (como mini-premio)", points:{EVENTO:2}},
+          {label:"B", text:"Plan celebración (mini-premio)", points:{EVENTO:2}},
           {label:"C", text:"Plan eficiente (rápido y perfecto)", points:{PRECISION:2}},
         ]},
-      { text:"Q21. En inmobiliario, ¿qué te parece más ‘sexy’?",
+      { text:"Q21. En inmobiliario, ¿qué te ilusiona más?",
         answers:[
-          {label:"A", text:"Una operación impecable (papeles perfectos)", points:{PRECISION:2}},
-          {label:"B", text:"Detectar una oportunidad antes que otros", points:{PLOT:2}},
-          {label:"C", text:"Un activo sólido que da paz", points:{PRIME:2}},
+          {label:"A", text:"Operación impecable (todo perfecto)", points:{PRECISION:2}},
+          {label:"B", text:"Ver la oportunidad antes que otros", points:{PLOT:2}},
+          {label:"C", text:"Algo sólido que da paz", points:{PRIME:2}},
         ]},
       { text:"Q22. Si hoy fuera una película vuestra, ¿qué género gana?",
         answers:[
@@ -468,7 +458,7 @@
           {label:"B", text:"Heist inteligente (plan maestro)", points:{PLOT:2}},
           {label:"C", text:"Épica de premio", points:{EVENTO:2}},
         ]},
-      { text:"Q23. Cuando alguien te reconoce el trabajo, tú prefieres…",
+      { text:"Q23. Cuando te reconocen el trabajo, prefieres…",
         answers:[
           {label:"A", text:"Discreción: gracias y seguimos", points:{PRIME:2}},
           {label:"B", text:"Celebrarlo un poco", points:{EVENTO:2}},
@@ -482,63 +472,70 @@
         ]},
     ];
 
-    // ---------- 6 PREGUNTAS FINALES (siempre 6) ----------
-    // En vez de un árbol corto, hacemos una “segunda vuelta” que elige el PROYECTO (solo clave).
-    // Aquí solo salen códigos de proyecto, no nombres reales.
+    // 6 finales (solo registramos letras)
     const finalQuestions = [
       { text:"Q25. Para esta noche, ¿qué te apetece priorizar?",
         answers:[
-          {label:"A", text:"Elegancia discreta", map:{PRIME:["ALFA","ORIÓN","COBALTO","GAMMA"]}},
-          {label:"B", text:"Sorpresa con criterio", map:{PLOT:["HELIO","IOTA","THETA","ZETA","ETA"]}},
-          {label:"C", text:"Celebración con energía", map:{ENERGIA:["QUÓRUM","LAMBDA","EPSILON","PI","NU","KAPPA"]}},
+          {label:"A", text:"Elegancia discreta"},
+          {label:"B", text:"Sorpresa con criterio"},
+          {label:"C", text:"Celebración con energía"},
         ]},
       { text:"Q26. ¿Cómo quieres sentirte al salir?",
         answers:[
-          {label:"A", text:"‘Qué nivel’", map:{PRECISION:["COBALTO","KAPPA","HELIO","MU"]}},
-          {label:"B", text:"‘Qué bien he estado’", map:{CONFORT:["DELTA","GAMMA","ORIÓN","OMICRON","ALFA"]}},
-          {label:"C", text:"‘Qué planazo’", map:{EVENTO:["XI","COBALTO","KAPPA","PI","NU","LAMBDA"]}},
+          {label:"A", text:"‘Qué nivel’"},
+          {label:"B", text:"‘Qué bien he estado’"},
+          {label:"C", text:"‘Qué planazo’"},
         ]},
       { text:"Q27. Si esto fuera un reloj, hoy sería más…",
         answers:[
-          {label:"A", text:"Clásico eterno", map:{PRIME:["ALFA","DELTA","ORIÓN"]}},
-          {label:"B", text:"Pieza especial", map:{EVENTO:["XI","COBALTO","KAPPA"]}},
-          {label:"C", text:"Ingeniería bonita", map:{PRECISION:["HELIO","COBALTO","MU","KAPPA"]}},
+          {label:"A", text:"Clásico eterno"},
+          {label:"B", text:"Pieza especial"},
+          {label:"C", text:"Ingeniería bonita"},
         ]},
       { text:"Q28. Si esto fuera una inversión, ¿qué te ilusiona más?",
         answers:[
-          {label:"A", text:"Prime seguro", map:{PRIME:["ALFA","DELTA","GAMMA"]}},
-          {label:"B", text:"Value-add con cabeza", map:{PLOT:["IOTA","THETA","ZETA","ETA"]}},
-          {label:"C", text:"‘Capricho’ muy bien elegido", map:{EVENTO:["XI","KAPPA","COBALTO","NU"]}},
+          {label:"A", text:"Prime seguro"},
+          {label:"B", text:"Value-add con cabeza"},
+          {label:"C", text:"Capricho bien elegido"},
         ]},
       { text:"Q29. Para un plan de pareja, ¿qué encaja más hoy?",
         answers:[
-          {label:"A", text:"Íntimo y bonito", map:{CONFORT:["ORIÓN","OMICRON","GAMMA","DELTA"]}},
-          {label:"B", text:"Elegante y especial", map:{PRIME:["ALFA","COBALTO","XI"]}},
-          {label:"C", text:"Divertido y con chispa", map:{ENERGIA:["QUÓRUM","EPSILON","LAMBDA"]}},
+          {label:"A", text:"Íntimo y bonito"},
+          {label:"B", text:"Elegante y especial"},
+          {label:"C", text:"Divertido y con chispa"},
         ]},
       { text:"Q30. Última: ¿qué te apetece más ahora mismo?",
         answers:[
-          {label:"A", text:"Plan impecable", map:{PRECISION:["COBALTO","HELIO","MU","KAPPA"]}},
-          {label:"B", text:"Plan con personalidad", map:{PLOT:["ETA","ZETA","THETA","EPSILON","IOTA"]}},
-          {label:"C", text:"Plan de premio", map:{EVENTO:["XI","KAPPA","PI","NU"]}},
+          {label:"A", text:"Plan impecable"},
+          {label:"B", text:"Plan con personalidad"},
+          {label:"C", text:"Plan de premio"},
         ]},
     ];
 
-    // Para elegir PROYECTO final: acumulamos “votos” por código (solo en finales).
-    function freshVotes(){ return {}; }
-    function vote(votes, code, n=1){ votes[code] = (votes[code]||0) + n; }
-    function pickWinner(votes){
-      const entries = Object.entries(votes);
-      if (!entries.length) return "PROYECTO ALFA";
-      entries.sort((a,b)=> b[1]-a[1]);
-      const topScore = entries[0][1];
-      const top = entries.filter(e=> e[1]===topScore).map(e=>e[0]);
-
-      // desempate fijo para que sea estable
-      const priority = ["COBALTO","KAPPA","ALFA","HELIO","XI","DELTA","GAMMA","ORIÓN","LAMBDA","QUÓRUM","ETA","ZETA","THETA","IOTA","MU","OMICRON","EPSILON","PI","NU"];
+    function computeTopProfile(scores){
+      const entries = Object.entries(scores);
+      const max = Math.max(...entries.map(e=>e[1]));
+      const top = entries.filter(e=>e[1]===max).map(e=>e[0]);
+      const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
       top.sort((a,b)=> priority.indexOf(a)-priority.indexOf(b));
-      return "PROYECTO " + top[0];
+      return top[0];
     }
+
+    // Hash simple, estable, sin librerías
+    function hashString(str){
+      let h = 2166136261; // FNV-1a base
+      for (let i=0;i<str.length;i++){
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+      }
+      return (h >>> 0); // uint32
+    }
+
+    // Lista fija de proyectos (sin nombres reales)
+    const PROJECTS = [
+      "ALFA","HELIO","GAMMA","DELTA","EPSILON","QUÓRUM","ETA","THETA","IOTA",
+      "KAPPA","LAMBDA","ORIÓN","COBALTO","XI","OMICRON","PI","NU"
+    ];
 
     // ---------- UI ----------
     const screenWelcome = document.getElementById("screenWelcome");
@@ -555,14 +552,14 @@
     const resultCode = document.getElementById("resultCode");
     const resultHint = document.getElementById("resultHint");
 
-    let scores, votes, idx, phase, topProfile;
+    let scores, idx, phase, topProfile, finalLetters;
 
     function reset(){
       scores = freshScores();
-      votes = freshVotes();
       idx = 0;
       phase = "welcome"; // welcome | base | final | done
       topProfile = null;
+      finalLetters = [];
 
       screenWelcome.style.display = "";
       screenQuiz.style.display = "none";
@@ -578,15 +575,6 @@
       screenResult.style.display = "none";
       idx = 0;
       render();
-    }
-
-    function computeTopProfile(){
-      const entries = Object.entries(scores);
-      const max = Math.max(...entries.map(e=>e[1]));
-      const top = entries.filter(e=>e[1]===max).map(e=>e[0]);
-      const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
-      top.sort((a,b)=> priority.indexOf(a)-priority.indexOf(b));
-      return top[0];
     }
 
     function render(){
@@ -606,9 +594,9 @@
             addPoints(scores, a.points);
             idx++;
             if (idx >= baseQuestions.length){
-              topProfile = computeTopProfile();
+              topProfile = computeTopProfile(scores);
               phase = "final";
-              idx = baseQuestions.length; // continue counting 25..30
+              idx = baseQuestions.length; // pasa a Q25
               render();
             } else {
               render();
@@ -627,27 +615,9 @@
         q.answers.forEach(a=>{
           const b = document.createElement("button");
           b.className = "answer";
-          // pequeño subtítulo para que se note el tono, sin revelar nada
-          b.innerHTML = `<strong>${a.label})</strong> ${a.text}<small>Decisión registrada.</small>`;
+          b.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
           b.onclick = ()=>{
-            // Vota por códigos según el perfil dominante que salió en base
-            const list = (a.map[topProfile] || []);
-            // peso extra al perfil dominante (para que tenga sentido)
-            list.forEach(code => vote(votes, code, 2));
-
-            // y un peso ligero a perfiles “vecinos” para que no sea rígido
-            // (esto hace el resultado más estable y divertido)
-            if (topProfile === "EVENTO" || topProfile === "ENERGIA") {
-              (a.map["EVENTO"]||[]).forEach(code=>vote(votes, code, 1));
-              (a.map["ENERGIA"]||[]).forEach(code=>vote(votes, code, 1));
-            } else if (topProfile === "PRIME" || topProfile === "PRECISION") {
-              (a.map["PRIME"]||[]).forEach(code=>vote(votes, code, 1));
-              (a.map["PRECISION"]||[]).forEach(code=>vote(votes, code, 1));
-            } else {
-              (a.map["PLOT"]||[]).forEach(code=>vote(votes, code, 1));
-              (a.map["CONFORT"]||[]).forEach(code=>vote(votes, code, 1));
-            }
-
+            finalLetters.push(a.label); // guardamos A/B/C
             idx++;
             if (idx >= TOTAL_QUESTIONS){
               finish();
@@ -667,8 +637,11 @@
       screenResult.style.display = "";
       fill.style.width = "100%";
 
-      const code = pickWinner(votes);
-      resultCode.textContent = code;
+      // Reparto casi uniforme: hash(perfil + 6 letras) mod 17
+      const key = `${topProfile}:${finalLetters.join("")}`;
+      const h = hashString(key);
+      const pick = PROJECTS[h % PROJECTS.length];
+      resultCode.textContent = `PROYECTO ${pick}`;
 
       const lines = {
         PRIME: "Perfil ganador: elegancia tranquila. Hoy toca plan fino y bien elegido.",
@@ -678,10 +651,9 @@
         CONFORT: "Perfil ganador: confort. Hoy toca estar bien y celebrar lo nuestro.",
         EVENTO: "Perfil ganador: evento. Hoy toca noche de premio, sin medias tintas."
       };
-      resultHint.textContent = lines[topProfile] || "Decisión tomada. Confía en María.";
+      resultHint.textContent = lines[topProfile] || "Decisión tomada. Confía en Maria.";
     }
 
-    // ---------- buttons ----------
     btnStart.addEventListener("click", showQuiz);
     btnRestartFromWelcome.addEventListener("click", reset);
     btnRestart.addEventListener("click", ()=>{ reset(); showQuiz(); });
