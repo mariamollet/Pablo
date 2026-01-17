@@ -1,2965 +1,965 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="utf-8" />
-		<title>
-		</title>
-		<style>
-			body { line-height:116%; font-family:Aptos; font-size:12pt }
-			h1, h2, h3, h4, h5, h6, p { margin:0pt 0pt 8pt }
-			h1 { margin-top:18pt; margin-bottom:4pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:'Aptos Display'; font-size:20pt; font-weight:normal; color:#0f4761 }
-			h2 { margin-top:8pt; margin-bottom:4pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:'Aptos Display'; font-size:16pt; font-weight:normal; color:#0f4761 }
-			h3 { margin-top:8pt; margin-bottom:4pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:Aptos; font-size:14pt; font-weight:normal; color:#0f4761 }
-			h4 { margin-top:4pt; margin-bottom:2pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:Aptos; font-size:12pt; font-weight:normal; font-style:italic; color:#0f4761 }
-			h5 { margin-top:4pt; margin-bottom:2pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:Aptos; font-size:12pt; font-weight:normal; color:#0f4761 }
-			h6 { margin-top:2pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-family:Aptos; font-size:12pt; font-weight:normal; font-style:italic; color:#595959 }
-			.Heading7 { margin-top:2pt; margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:12pt; font-weight:normal; color:#595959 }
-			.Heading8 { margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:12pt; font-weight:normal; font-style:italic; color:#272727 }
-			.Heading9 { margin-bottom:0pt; page-break-inside:avoid; page-break-after:avoid; line-height:116%; font-size:12pt; font-weight:normal; color:#272727 }
-			.IntenseQuote { margin:18pt 43.2pt; text-align:center; line-height:116%; border-top:0.75pt solid #0f4761; border-bottom:0.75pt solid #0f4761; padding-top:10pt; padding-bottom:10pt; font-size:12pt; font-style:italic; color:#0f4761 }
-			.ListParagraph { margin-left:36pt; margin-bottom:8pt; line-height:116%; font-size:12pt }
-			.Quote { margin-top:8pt; margin-bottom:8pt; text-align:center; line-height:116%; font-size:12pt; font-style:italic; color:#404040 }
-			.Subtitle { margin-bottom:8pt; line-height:116%; font-size:14pt; letter-spacing:0.75pt; color:#595959 }
-			.Title { margin-bottom:4pt; line-height:normal; font-family:'Aptos Display'; font-size:28pt; letter-spacing:-0.5pt }
-			span.Heading1Char { font-family:'Aptos Display'; font-size:20pt; color:#0f4761 }
-			span.Heading2Char { font-family:'Aptos Display'; font-size:16pt; color:#0f4761 }
-			span.Heading3Char { font-size:14pt; color:#0f4761 }
-			span.Heading4Char { font-style:italic; color:#0f4761 }
-			span.Heading5Char { color:#0f4761 }
-			span.Heading6Char { font-style:italic; color:#595959 }
-			span.Heading7Char { color:#595959 }
-			span.Heading8Char { font-style:italic; color:#272727 }
-			span.Heading9Char { color:#272727 }
-			span.IntenseEmphasis { font-style:italic; color:#0f4761 }
-			span.IntenseQuoteChar { font-style:italic; color:#0f4761 }
-			span.IntenseReference { font-weight:bold; font-variant:small-caps; letter-spacing:0.25pt; color:#0f4761 }
-			span.QuoteChar { font-style:italic; color:#404040 }
-			span.SubtitleChar { font-size:14pt; letter-spacing:0.75pt; color:#595959 }
-			span.TitleChar { font-family:'Aptos Display'; font-size:28pt; letter-spacing:-0.5pt }
-@media (max-width: 900px) { 
-img { 
-   max-width: 100%;
-   height: auto;
-}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Operación Cena Secreta</title>
+  <style>
+    :root{
+      --bg:#0c0f14;
+      --card:#121826;
+      --card2:#0f1522;
+      --text:#e9eef7;
+      --muted:#a9b3c7;
+      --gold:#c9a86a;
+      --gold2:#b8924a;
+      --line:rgba(201,168,106,.22);
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --maxw: 860px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(201,168,106,.16), transparent 60%),
+        radial-gradient(900px 600px at 90% 80%, rgba(111,148,255,.12), transparent 55%),
+        linear-gradient(180deg, #07090d, var(--bg) 35%, #07090d);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px 14px;
+    }
+    .wrap{
+      width:100%;
+      max-width: var(--maxw);
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(18,24,38,.92), rgba(10,14,22,.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .header{
+      padding: 28px 26px 18px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(700px 220px at 15% 0%, rgba(201,168,106,.13), transparent 60%),
+        linear-gradient(180deg, rgba(18,24,38,.6), rgba(18,24,38,0));
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(201,168,106,.35);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(201,168,106,.08);
+      font-weight:600;
+      letter-spacing:.2px;
+      font-size: 13px;
+    }
+    .badge .dot{
+      width:8px;height:8px;border-radius:99px;background:var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,168,106,.12);
+    }
+    h1{
+      margin: 14px 0 6px;
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: clamp(24px, 3.2vw, 34px);
+      line-height: 1.12;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15.5px;
+      max-width: 72ch;
+    }
 
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
+    .content{
+      padding: 20px 26px 26px;
+    }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+    .panel{
+      background: linear-gradient(180deg, rgba(15,21,34,.55), rgba(15,21,34,.25));
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius2);
+      padding: 18px 16px;
+    }
+    .rules{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
 
-td, th {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-}	
+    .btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    button{
+      font-family: inherit;
+      border-radius: 14px;
+      border: 1px solid rgba(201,168,106,.35);
+      background: linear-gradient(180deg, rgba(201,168,106,.18), rgba(201,168,106,.06));
+      color: var(--text);
+      padding: 12px 14px;
+      cursor:pointer;
+      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+      font-weight: 650;
+      letter-spacing: .15px;
+    }
+    button:hover{
+      transform: translateY(-1px);
+      border-color: rgba(201,168,106,.55);
+      background: linear-gradient(180deg, rgba(201,168,106,.24), rgba(201,168,106,.08));
+    }
+    button:active{
+      transform: translateY(0px) scale(.99);
+    }
+    .btn-primary{
+      padding: 12px 18px;
+    }
+    .btn-ghost{
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight: 600;
+    }
 
+    .progressWrap{
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .bar{
+      flex:1;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+    }
+    .fill{
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(201,168,106,.25), rgba(201,168,106,.65));
+      border-right: 1px solid rgba(255,255,255,.22);
+      transition: width .25s ease;
+    }
 
-		</style>
-	</head>
-	<body>
-			<p>
-				&lt;!doctype html&gt;
-			</p>
-			<p>
-				&lt;html lang="es"&gt;
-			</p>
-			<p>
-				&lt;head&gt;
-			</p>
-			<p>
-				&#xa0; &lt;meta charset="utf-8" /&gt;
-			</p>
-			<p>
-				&#xa0; &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
-			</p>
-			<p>
-				&#xa0; &lt;title&gt;Operación Cena Secreta&lt;/title&gt;
-			</p>
-			<p>
-				&#xa0; &lt;style&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; :root{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --bg:#0c0f14;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --card:#121826;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --card2:#0f1522;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --text:#e9eef7;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --muted:#a9b3c7;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --gold:#c9a86a;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --gold2:#b8924a;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --line:rgba(201,168,106,.22);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --shadow: 0 18px 55px rgba(0,0,0,.45);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --radius: 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --radius2: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --maxw: 860px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; *{box-sizing:border-box}
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; body{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin:0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; min-height:100vh;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-family: var(--font);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--text);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background:
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; radial-gradient(900px 500px at 20% 10%, rgba(201,168,106,.16), transparent 60%),
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; radial-gradient(900px 600px at 90% 80%, rgba(111,148,255,.12), transparent 55%),
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; linear-gradient(180deg, #07090d, var(--bg) 35%, #07090d);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:flex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; align-items:center;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; justify-content:center;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 28px 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .wrap{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; width:100%;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; max-width: var(--maxw);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .card{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(180deg, rgba(18,24,38,.92), rgba(10,14,22,.92));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid var(--line);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: var(--radius);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; box-shadow: var(--shadow);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; overflow:hidden;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .header{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 28px 26px 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-bottom: 1px solid var(--line);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background:
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; radial-gradient(700px 220px at 15% 0%, rgba(201,168,106,.13), transparent 60%),
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; linear-gradient(180deg, rgba(18,24,38,.6), rgba(18,24,38,0));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .badge{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:inline-flex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; align-items:center;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; gap:10px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 8px 12px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(201,168,106,.35);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: 999px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--gold);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: rgba(201,168,106,.08);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight:600;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; letter-spacing:.2px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 13px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .badge .dot{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; width:8px;height:8px;border-radius:99px;background:var(--gold);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; box-shadow: 0 0 0 4px rgba(201,168,106,.12);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; h1{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin: 14px 0 6px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-family: var(--serif);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 700;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; letter-spacing: .2px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: clamp(24px, 3.2vw, 34px);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.12;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .subtitle{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin:0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.55;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 15.5px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; max-width: 72ch;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .content{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 20px 26px 26px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .panel{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(180deg, rgba(15,21,34,.55), rgba(15,21,34,.25));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(255,255,255,.06);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: var(--radius2);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 18px 16px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .rules{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin: 10px 0 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding-left: 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.55;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .btnrow{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:flex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; flex-wrap:wrap;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; gap: 12px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin-top: 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; button{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-family: inherit;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(201,168,106,.35);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(180deg, rgba(201,168,106,.18), rgba(201,168,106,.06));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--text);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 12px 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; cursor:pointer;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; transition: transform .08s ease, border-color .12s ease, background .12s ease;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 650;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; letter-spacing: .15px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; button:hover{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; transform: translateY(-1px);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-color: rgba(201,168,106,.55);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(180deg, rgba(201,168,106,.24), rgba(201,168,106,.08));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; button:active{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; transform: translateY(0px) scale(.99);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .btn-primary{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 12px 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .btn-ghost{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-color: rgba(255,255,255,.12);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: rgba(255,255,255,.04);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 600;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .progressWrap{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin-top: 16px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:flex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; align-items:center;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; justify-content:space-between;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; gap: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 13px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .bar{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; flex:1;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; height: 10px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: 999px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: rgba(255,255,255,.06);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(255,255,255,.08);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; overflow:hidden;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .fill{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; height: 100%;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; width: 0%;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(90deg, rgba(201,168,106,.25), rgba(201,168,106,.65));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-right: 1px solid rgba(255,255,255,.22);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; transition: width .25s ease;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .qtitle{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin: 0 0 10px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.35;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 720;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .answers{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:grid;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; gap: 10px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin-top: 10px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .answer{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text-align:left;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; width:100%;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 13px 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(255,255,255,.10);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--text);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 620;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .answer small{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:block;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 520;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin-top: 4px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.35;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .answer:hover{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-color: rgba(201,168,106,.45);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .resultCode{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-weight: 800;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; letter-spacing: .6px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 18px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--gold);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; background: rgba(201,168,106,.08);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border: 1px solid rgba(201,168,106,.25);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 10px 12px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-radius: 12px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:inline-block;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin: 10px 0 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .hint{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: var(--muted);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 14px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; line-height: 1.55;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; margin: 10px 0 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; .footer{
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; padding: 14px 26px 22px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; border-top: 1px solid var(--line);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; display:flex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; justify-content:space-between;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; gap: 12px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; color: rgba(255,255,255,.35);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; font-size: 12.5px;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; @media (max-width:520px){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; .header,.content,.footer{ padding-left:16px; padding-right:16px; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; .qtitle{font-size: 16.5px;}
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; button, .answer{border-radius: 12px;}
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0; &lt;/style&gt;
-			</p>
-			<p>
-				&lt;/head&gt;
-			</p>
-			<p>
-				&lt;body&gt;
-			</p>
-			<p>
-				&#xa0; &lt;div class="wrap"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; &lt;div class="card"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="header"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="badge"&gt;&lt;span class="dot"&gt;&lt;/span&gt; Operación Cena Secreta&lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;h1 id="heroTitle"&gt;Pablo, enhorabuena <span style="font-family:'Segoe UI Emoji'">🏆</span>&lt;/h1&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;p class="subtitle" id="heroText"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Me han dicho que te han dado un premio por tu trabajazo estos últimos años.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Así que hoy mando yo: &lt;strong&gt;te invito a cenar&lt;/strong&gt;.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Pero hay una condición… no puedes saber a dónde vamos hasta que lleguemos.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/p&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="content"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="panel" id="screenWelcome"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;p class="subtitle" style="margin:0 0 12px;"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Esto es un mini-juego tipo “due diligence”: respondes &lt;strong&gt;A/B/C&lt;/strong&gt; a preguntas rápidas
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; (finanzas, cine, noticias, gym 7:00, relojes, Real Madrid… tú mismo).
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/p&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;ul class="rules"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;li&gt;Responde sin pensarlo demasiado (máximo 3 segundos).&lt;/li&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;li&gt;No hay preguntas obvias de “tipo de cocina”.&lt;/li&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;li&gt;Al final te sale un &lt;strong&gt;nombre en clave&lt;/strong&gt;. El nombre real se revela en la puerta.&lt;/li&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/ul&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="btnrow"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;button class="btn-primary" id="btnStart"&gt;Empezar&lt;/button&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;button class="btn-ghost" id="btnPreview"&gt;Ver reglas otra vez&lt;/button&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="panel" id="screenQuiz" style="display:none;"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="progressWrap"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;span id="stepText"&gt;Pregunta 1 de 22&lt;/span&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="bar"&gt;&lt;div class="fill" id="fill"&gt;&lt;/div&gt;&lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;span id="microHint"&gt;A/B/C&lt;/span&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;h2 class="qtitle" id="qText" style="margin-top:14px;"&gt;&lt;/h2&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="answers" id="answers"&gt;&lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="btnrow" style="margin-top:16px;"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;button class="btn-ghost" id="btnRestart"&gt;Reiniciar&lt;/button&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="panel" id="screenResult" style="display:none;"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;h2 class="qtitle" style="margin:0;"&gt;Resultado aprobado <span style="font-family:'Segoe UI Emoji'">✅</span>&lt;/h2&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;p class="subtitle" style="margin:6px 0 0;"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; El comité ha decidido tu destino. El nombre real se revela &lt;strong&gt;solo al llegar&lt;/strong&gt;.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/p&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="resultCode" id="resultCode"&gt;PROYECTO ???&lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;p class="hint" id="resultHint"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; Instrucción: María anunciará el nombre en clave y tú solo tienes que confiar.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/p&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="btnrow"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;button class="btn-primary" id="btnPlayAgain"&gt;Jugar otra vez&lt;/button&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;div class="footer"&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;span&gt;Hecho con cariño (y un poquito de estrategia).&lt;/span&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;span&gt;© María&lt;/span&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0; &lt;/div&gt;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0; &lt;script&gt;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // 1) Perfiles y puntuación
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const PROFILES = ["PRIME","PLOT","ENERGIA","PRECISION","CONFORT","EVENTO"];
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function freshScores(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const s = {};
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PROFILES.forEach(p =&gt; s[p] = 0);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return s;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function addPoints(scores, delta){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; for (const [k,v] of Object.entries(delta)){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; scores[k] = (scores[k] ?? 0) + v;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // 2) Preguntas base (18 fijas)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; //&#xa0;&#xa0;&#xa0; Cada respuesta añade puntos.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const baseQuestions = [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q1",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q1. Hoy, ¿qué te apetece más celebrar?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"El logro profesional (modo premio)", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Que estemos a gusto (modo pareja)", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Las dos cosas, pero con estilo", points:{PRIME:1, PRECISION:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q2",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q2. Si mañana compraras un piso, ¿qué priorizarías?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Ubicación prime: fácil y seguro", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Potencial: mejorarlo y ganar valor", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Que funcione perfecto sin trabajo", points:{CONFORT:1, PRECISION:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q3",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q3. ¿Qué tipo de noticia te engancha más últimamente?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Economía/mercados: entender qué pasa", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Actualidad para debatir y opinar", points:{PRIME:1, PLOT:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Ciencia/salud: datos útiles (modo farma)", points:{PRECISION:1, CONFORT:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q4",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q4. En el cine, ¿qué disfrutas más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Guion perfecto: sin agujeros", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Giro bien hecho: ‘no me lo vi venir’", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Salir con subidón y ganas de aplaudir", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q5",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q5. Real Madrid: ¿qué te gusta más ver en un partido?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Control y estrategia", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Remontada épica", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Ataque constante y emoción", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q6",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q6. En un reloj, ¿qué te conquista más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Discreción elegante", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Mecanismo/historia: precisión bonita", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Pieza especial para una ocasión", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q7",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q7. Mañana hay gym a las 7:00. ¿Cómo quieres levantarte?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Ligero y fino", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Normal, sin drama", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Con una sonrisa: hoy se celebra", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q8",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q8. Para hacer más cardio, ¿qué te motiva más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Métricas y progreso (ritmo, zonas…)", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Constancia tranquila: lo que se sostiene", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Reto divertido: ‘venga, una más’", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q9",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q9. Si esta cena fuera una decisión financiera, ¿qué prefieres?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Eficiencia: todo bien atado", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Ocasión especial: ‘vale cada minuto’", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Algo inteligente que sorprende para bien", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q10",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q10. ¿Qué te apetece más hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Conversación tranquila sin interrupciones", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Ambiente vivo (pero agradable)", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Un punto ‘wow’ sin estridencias", points:{PRIME:1, EVENTO:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q11",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q11. En modo ‘director financiero’ en una reunión, ¿qué estilo te sale más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Directo: ‘vamos al grano’", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Con humor: tensión cero, foco igual", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Con clase: firme pero elegante", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q12",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q12. De Sri Lanka, ¿qué fue lo mejor para ti?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Descubrir cosas nuevas", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Estar bien sin pensar demasiado", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Las historias y recuerdos que te quedan", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q13",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q13. En el cine, ¿qué asiento elegirías si pudieras?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Centro perfecto: equilibrio", points:{PRIME:1, PRECISION:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Pasillo: práctico y rápido", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"El ‘mejor disponible’ de última hora", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q14",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q14. ¿Qué frase te gustaría decir al salir hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"‘Qué bien cuidado estaba todo’", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"‘Qué divertido ha sido’", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"‘Qué sorpresa tan bien pensada’", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q15",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q15. Si te doy una bolsa de tus regalices rojas favoritas, ¿qué harías?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Me como una y la guardo para luego (control total)", points:{CONFORT:1, PRECISION:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"La comparto y además pruebo algo distinto hoy", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Me la acabo feliz: hoy es día de premio", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q16",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q16. Como CFO, ¿qué te irrita más en un plan?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Desorden / falta de criterio", points:{PRECISION:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Frialdad: cero humanidad", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Que sea plano: sin emoción", points:{ENERGIA:1, EVENTO:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q17",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q17. Para la boda 2027, ¿qué tono te imaginas más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Clásico elegante", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Emotivo y familiar", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Fiesta con momentazo", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q18",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q18. Cuando vivamos en Terrassa, un sábado ideal sería…",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Tranquilo, calidad sin prisa", points:{CONFORT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Con actividad y movimiento", points:{ENERGIA:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Plan especial de pareja", points:{PRIME:1, EVENTO:1}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; ];
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // Tie-breaker (solo si hay empate tras Q18)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const tieBreaker = {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q19",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q19 (desempate). ¿Qué prefieres que pase hoy sí o sí?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Que salga todo impecable", points:{PRIME:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Que os sorprenda para bien", points:{PLOT:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Que sea un momentazo", points:{EVENTO:2}},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // 3) Finales (árbol corto por perfil ganador)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // Cada final termina en un CODENAME.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // (No incluimos aquí la chuleta de restaurantes reales para que Pablo no la vea.)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const finals = {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PRIME: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20P",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Qué tipo de elegancia te apetece hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Discreción total", next:"Q21P"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Elegancia moderna", next:"Q22P"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Elegancia con ‘toque especial’", next:"Q23P"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21P",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. ¿Te gustan más los planes…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Muy íntimos", result:"PROYECTO ORIÓN"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Muy redondos y cuidados", result:"PROYECTO ALFA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"(No hay C) — el comité te ve indeciso <span style="font-family:'Segoe UI Emoji'">😄</span>", result:"PROYECTO ALFA"}
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22P",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. Hoy te tira más…",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Ciudad y contemporáneo", result:"PROYECTO GAMMA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Clásico con personalidad", result:"PROYECTO DELTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Algo impecable y top", result:"PROYECTO COBALTO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23P",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. El detalle que te gana es…",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Servicio finísimo", result:"PROYECTO COBALTO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Estética y glamour", result:"PROYECTO XI"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Ambiente muy cuidado", result:"PROYECTO ORIÓN"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PLOT: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20L",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Qué tipo de sorpresa te gusta más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"‘No lo habría elegido yo, y me encanta’", next:"Q21L"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"‘Me hace gracia y tiene rollo’", next:"Q22L"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"‘Me sorprende por nivel’", next:"Q23L"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21L",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. ¿La sorpresa te gusta más tipo…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"‘Viaje sin moverse’", result:"PROYECTO ETA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Mezcla inesperada", result:"PROYECTO IOTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Un giro creativo", result:"PROYECTO THETA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22L",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. ¿Te apetece un punto más…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Urbano y travieso", result:"PROYECTO EPSILON"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Barrio con carácter", result:"PROYECTO ZETA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Divertido y moderno", result:"PROYECTO LAMBDA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23L",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. ¿Qué te gana más: creatividad o perfección?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Creatividad medida", result:"PROYECTO HELIO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Giro inesperado", result:"PROYECTO THETA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Nivel altísimo sin ruido", result:"PROYECTO COBALTO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ENERGIA: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20E",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Cómo quieres el ambiente hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Animado pero cómodo", next:"Q21E"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Animado y potente", next:"Q22E"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Animado y moderno", next:"Q23E"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21E",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. ¿Qué tipo de plan te hace más feliz hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Risas + comer muy bien", result:"PROYECTO QUÓRUM"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Energía con toque sofisticado", result:"PROYECTO KAPPA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Algo distinto pero fácil de disfrutar", result:"PROYECTO EPSILON"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22E",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. Para celebrar, ¿qué te apetece más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Sensación de festín", result:"PROYECTO PI"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Plan con carácter y brasa elegante", result:"PROYECTO NU"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Plan moderno y con ritmo", result:"PROYECTO LAMBDA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23E",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. ¿Lo prefieres más…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Moderno con ritmo", result:"PROYECTO LAMBDA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Con chispa creativa", result:"PROYECTO EPSILON"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Con final ‘wow’", result:"PROYECTO KAPPA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PRECISION: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20R",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Cómo te gusta que esté diseñado el plan?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Foco y claridad", next:"Q21R"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Producto impecable", next:"Q22R"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Un guion perfecto (sin relleno)", next:"Q23R"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21R",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. ¿Te apetece algo más…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Pequeño y afinado", result:"PROYECTO OMICRON"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Contemporáneo y medido", result:"PROYECTO GAMMA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Elegante sin ruido", result:"PROYECTO ALFA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22R",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. ¿Prefieres precisión con…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Nivel premium y muy cuidado", result:"PROYECTO COBALTO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Personalidad y producto", result:"PROYECTO MU"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Final de ‘qué nivel’", result:"PROYECTO KAPPA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23R",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. ¿Te apetece precisión con…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Creatividad bien medida", result:"PROYECTO HELIO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Mezcla de estilos con sentido", result:"PROYECTO KAPPA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Redondez absoluta", result:"PROYECTO DELTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; CONFORT: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20C",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Qué plan te encaja más hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Hablar tranquilos y salir felices", next:"Q21C"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Comodidad total: cero pensar", next:"Q22C"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Acogedor pero con nivel", next:"Q23C"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21C",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. ¿Tu confort es más…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Cálido y con alma", result:"PROYECTO DELTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Bistró cómodo y elegante", result:"PROYECTO GAMMA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Pareja tranquila, plan fino", result:"PROYECTO ALFA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22C",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. ¿Prefieres confort…?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Pequeño y tranquilo", result:"PROYECTO OMICRON"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Tranquilo pero con carácter", result:"PROYECTO ORIÓN"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Con chispa sin ruido", result:"PROYECTO GAMMA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23C",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. ¿Qué te gana más hoy?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Sensación de ‘hogar pro’", result:"PROYECTO DELTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Sensación de ‘pareja premium’", result:"PROYECTO ALFA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Redondez y calma", result:"PROYECTO ORIÓN"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; EVENTO: [
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q20V",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q20. ¿Qué tipo de ‘evento’ quieres que sea la noche?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Glamour e impacto", next:"Q21V"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Nivel gastronómico", next:"Q22V"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Celebración contundente", next:"Q23V"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q21V",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q21. Para ti, glamour es…",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Plan grande con estética top", result:"PROYECTO XI"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Elegancia discreta de altísimo nivel", result:"PROYECTO COBALTO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Celebración fina sin ruido", result:"PROYECTO ALFA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q22V",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q22. Para ti, nivel gastronómico es…",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Producto premium impecable", result:"PROYECTO KAPPA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Técnica + creatividad bien pensada", result:"PROYECTO HELIO"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Plan perfecto y redondo", result:"PROYECTO DELTA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; id:"Q23V",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; text:"Q23. Para celebrar a lo grande, ¿qué te apetece más?",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answers:[
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"A", text:"Potencia y brasa", result:"PROYECTO PI"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"B", text:"Carácter con final ‘wow’", result:"PROYECTO NU"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; {label:"C", text:"Energía moderna", result:"PROYECTO LAMBDA"},
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ]
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; },
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ],
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // 4) UI + Motor del test
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const screenWelcome = document.getElementById("screenWelcome");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const screenQuiz = document.getElementById("screenQuiz");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const screenResult = document.getElementById("screenResult");
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const btnStart = document.getElementById("btnStart");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const btnPreview = document.getElementById("btnPreview");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const btnRestart = document.getElementById("btnRestart");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const btnPlayAgain = document.getElementById("btnPlayAgain");
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const qText = document.getElementById("qText");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const answersEl = document.getElementById("answers");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const stepText = document.getElementById("stepText");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const fill = document.getElementById("fill");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const resultCode = document.getElementById("resultCode");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; const resultHint = document.getElementById("resultHint");
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; let scores, phase, baseIndex, currentFinalId, finalProfile, tieAsked;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function resetGame(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; scores = freshScores();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; phase = "welcome";&#xa0;&#xa0;&#xa0;&#xa0; // welcome | base | tie | final | done
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; baseIndex = 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; currentFinalId = null;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finalProfile = null;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; tieAsked = false;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenWelcome.style.display = "";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenQuiz.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenResult.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function showQuiz(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenWelcome.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenQuiz.style.display = "";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenResult.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; phase = "base";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; render();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function getProgress(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // total steps shown to user: 18 base + (0/1 tie) + 3 final approx.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // We'll compute dynamically for a smooth bar.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; let shown = 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "base") shown = baseIndex;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "tie") shown = 18;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "final") shown = 18 + (tieAsked ? 1 : 0) + countFinalAnswered();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "done") shown = 18 + (tieAsked ? 1 : 0) + 3;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const total = 22; // target feel (21-22)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return {shown, total};
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function countFinalAnswered(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // We can approximate by counting how many final questions we've advanced past.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // For UI purposes only.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (!currentFinalId) return 0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const list = finals[finalProfile] || [];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const idx = list.findIndex(q =&gt; q.id === currentFinalId);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return Math.max(0, idx);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function render(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const {shown, total} = getProgress();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const stepNumber = Math.min(shown + 1, total);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; stepText.textContent = `Pregunta ${stepNumber} de ${total}`;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; fill.style.width = `${Math.min(100, Math.round((shown/total)*100))}%`;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answersEl.innerHTML = "";
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "base"){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const q = baseQuestions[baseIndex];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; qText.textContent = q.text;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; q.answers.forEach((a) =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const btn = document.createElement("button");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.className = "answer";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.innerHTML = `&lt;strong&gt;${a.label})&lt;/strong&gt; ${a.text}`;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.onclick = () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; addPoints(scores, a.points);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; baseIndex++;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (baseIndex &gt;= baseQuestions.length){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; decideAfterBase();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; } else {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; render();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answersEl.appendChild(btn);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "tie"){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; qText.textContent = tieBreaker.text;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; tieBreaker.answers.forEach(a =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const btn = document.createElement("button");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.className = "answer";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.innerHTML = `&lt;strong&gt;${a.label})&lt;/strong&gt; ${a.text}`;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.onclick = () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; addPoints(scores, a.points);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; tieAsked = true;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; decideFinalProfile(); // now pick profile and start finals
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answersEl.appendChild(btn);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (phase === "final"){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const q = (finals[finalProfile] || []).find(x =&gt; x.id === currentFinalId);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (!q){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // safety fallback
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finishWith("PROYECTO ALFA");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; qText.textContent = q.text;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; q.answers.forEach(a =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const btn = document.createElement("button");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.className = "answer";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.innerHTML = `&lt;strong&gt;${a.label})&lt;/strong&gt; ${a.text}`;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; btn.onclick = () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (a.result){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finishWith(a.result);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; } else if (a.next){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; currentFinalId = a.next;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; render();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; } else {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finishWith("PROYECTO ALFA");
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; answersEl.appendChild(btn);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; return;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function decideAfterBase(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // Determine top score(s)
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const entries = Object.entries(scores);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const max = Math.max(...entries.map(e =&gt; e[1]));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const top = entries.filter(e =&gt; e[1] === max).map(e =&gt; e[0]);
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; if (top.length === 1){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finalProfile = top[0];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; startFinal();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; } else {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // Ask tie breaker
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; phase = "tie";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; render();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function decideFinalProfile(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const entries = Object.entries(scores);
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const max = Math.max(...entries.map(e =&gt; e[1]));
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const top = entries.filter(e =&gt; e[1] === max).map(e =&gt; e[0]);
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // If still tied, pick the one that appears first in this priority list.
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; finalProfile = top.sort((a,b) =&gt; priority.indexOf(a) - priority.indexOf(b))[0];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; startFinal();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function startFinal(){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; phase = "final";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // pick first node of that profile
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const list = finals[finalProfile] || [];
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; currentFinalId = list.length ? list[0].id : null;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; render();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; function finishWith(code){
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; phase = "done";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenQuiz.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenWelcome.style.display = "none";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenResult.style.display = "";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; resultCode.textContent = code;
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // A little tailored closing line based on profile:
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; const closing = {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PRIME: "Destino con elegancia, de los que un reloj discreto aprobaría.",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PLOT: "Destino con giro inteligente: hoy gana el ‘no me lo esperaba’.",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; ENERGIA: "Destino con ritmo: celebración con sonrisa garantizada.",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; PRECISION: "Destino de precisión: criterio y detalle, como te gusta.",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; CONFORT: "Destino para hablar y estar bien: pareja y futuro en modo bonito.",
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; EVENTO: "Destino ‘premio’: hoy toca plan grande, sin medias tintas."
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; };
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; resultHint.textContent = closing[finalProfile] || "Destino asignado. Confía en María.";
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // reset progress bar to 100
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; fill.style.width = "100%";
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; }
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // 5) Botones
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // -----------------------------
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; btnStart.addEventListener("click", () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; showQuiz();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; btnPreview.addEventListener("click", () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; // just re-shows the welcome, nothing else
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; screenWelcome.scrollIntoView({behavior:"smooth", block:"start"});
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; btnRestart.addEventListener("click", () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; resetGame();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; showQuiz();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; btnPlayAgain.addEventListener("click", () =&gt; {
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; resetGame();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0;&#xa0;&#xa0; showQuiz();
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; });
-			</p>
-			<p>
-				&#xa0;
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; // init
-			</p>
-			<p>
-				&#xa0;&#xa0;&#xa0; resetGame();
-			</p>
-			<p>
-				&#xa0; &lt;/script&gt;
-			</p>
-			<p>
-				&lt;/body&gt;
-			</p>
-			<p>
-				&lt;/html&gt;
-			</p>
-	<p style="bottom: 10px; right: 10px; position: absolute;"><a href="https://wordtohtml.net/?utm_source=wth_free_doc_conversion_link&utm_medium=external" target="_blank" style="font-size:11px; color: #d0d0d0">Converted to HTML with WordToHTML.net</a><span style="font-size:11px; color: #d0d0d0"> | </span><a href="https://documentconverter.pro/?utm_source=wth_free_doc_conversion_link&utm_medium=external" target="_blank" style="font-size:11px; color: #d0d0d0">Document Converter for Windows</a></p>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4581d6a58cf94e929fad52deda295622","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    .qtitle{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 720;
+    }
+    .answers{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .answer{
+      text-align:left;
+      width:100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      color: var(--text);
+      font-weight: 620;
+    }
+    .answer small{
+      display:block;
+      color: var(--muted);
+      font-weight: 520;
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+    .answer:hover{
+      border-color: rgba(201,168,106,.45);
+    }
+
+    .resultCode{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 800;
+      letter-spacing: .6px;
+      font-size: 18px;
+      color: var(--gold);
+      background: rgba(201,168,106,.08);
+      border: 1px solid rgba(201,168,106,.25);
+      padding: 10px 12px;
+      border-radius: 12px;
+      display:inline-block;
+      margin: 10px 0 0;
+    }
+    .hint{
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 10px 0 0;
+    }
+
+    .footer{
+      padding: 14px 26px 22px;
+      border-top: 1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      color: rgba(255,255,255,.35);
+      font-size: 12.5px;
+    }
+
+    @media (max-width:520px){
+      .header,.content,.footer{ padding-left:16px; padding-right:16px; }
+      .qtitle{font-size: 16.5px;}
+      button, .answer{border-radius: 12px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="header">
+        <div class="badge"><span class="dot"></span> Operación Cena Secreta</div>
+        <h1 id="heroTitle">Pablo, enhorabuena 🏆</h1>
+        <p class="subtitle" id="heroText">
+          Me han dicho que te han dado un premio por tu trabajazo estos últimos años.
+          Así que hoy mando yo: <strong>te invito a cenar</strong>.
+          Pero hay una condición… no puedes saber a dónde vamos hasta que lleguemos.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="panel" id="screenWelcome">
+          <p class="subtitle" style="margin:0 0 12px;">
+            Esto es un mini-juego tipo “due diligence”: respondes <strong>A/B/C</strong> a preguntas rápidas
+            (finanzas, cine, noticias, gym 7:00, relojes, Real Madrid… tú mismo).
+          </p>
+          <ul class="rules">
+            <li>Responde sin pensarlo demasiado (máximo 3 segundos).</li>
+            <li>No hay preguntas obvias de “tipo de cocina”.</li>
+            <li>Al final te sale un <strong>nombre en clave</strong>. El nombre real se revela en la puerta.</li>
+          </ul>
+
+          <div class="btnrow">
+            <button class="btn-primary" id="btnStart">Empezar</button>
+            <button class="btn-ghost" id="btnPreview">Ver reglas otra vez</button>
+          </div>
+        </div>
+
+        <div class="panel" id="screenQuiz" style="display:none;">
+          <div class="progressWrap">
+            <span id="stepText">Pregunta 1 de 22</span>
+            <div class="bar"><div class="fill" id="fill"></div></div>
+            <span id="microHint">A/B/C</span>
+          </div>
+
+          <h2 class="qtitle" id="qText" style="margin-top:14px;"></h2>
+          <div class="answers" id="answers"></div>
+
+          <div class="btnrow" style="margin-top:16px;">
+            <button class="btn-ghost" id="btnRestart">Reiniciar</button>
+          </div>
+        </div>
+
+        <div class="panel" id="screenResult" style="display:none;">
+          <h2 class="qtitle" style="margin:0;">Resultado aprobado ✅</h2>
+          <p class="subtitle" style="margin:6px 0 0;">
+            El comité ha decidido tu destino. El nombre real se revela <strong>solo al llegar</strong>.
+          </p>
+          <div class="resultCode" id="resultCode">PROYECTO ???</div>
+          <p class="hint" id="resultHint">
+            Instrucción: María anunciará el nombre en clave y tú solo tienes que confiar.
+          </p>
+
+          <div class="btnrow">
+            <button class="btn-primary" id="btnPlayAgain">Jugar otra vez</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Hecho con cariño (y un poquito de estrategia).</span>
+        <span>© María</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // -----------------------------
+    // 1) Perfiles y puntuación
+    // -----------------------------
+    const PROFILES = ["PRIME","PLOT","ENERGIA","PRECISION","CONFORT","EVENTO"];
+
+    function freshScores(){
+      const s = {};
+      PROFILES.forEach(p => s[p] = 0);
+      return s;
+    }
+
+    function addPoints(scores, delta){
+      for (const [k,v] of Object.entries(delta)){
+        scores[k] = (scores[k] ?? 0) + v;
+      }
+    }
+
+    // -----------------------------
+    // 2) Preguntas base (18 fijas)
+    //    Cada respuesta añade puntos.
+    // -----------------------------
+    const baseQuestions = [
+      {
+        id:"Q1",
+        text:"Q1. Hoy, ¿qué te apetece más celebrar?",
+        answers:[
+          {label:"A", text:"El logro profesional (modo premio)", points:{EVENTO:2}},
+          {label:"B", text:"Que estemos a gusto (modo pareja)", points:{CONFORT:2}},
+          {label:"C", text:"Las dos cosas, pero con estilo", points:{PRIME:1, PRECISION:1}},
+        ]
+      },
+      {
+        id:"Q2",
+        text:"Q2. Si mañana compraras un piso, ¿qué priorizarías?",
+        answers:[
+          {label:"A", text:"Ubicación prime: fácil y seguro", points:{PRIME:2}},
+          {label:"B", text:"Potencial: mejorarlo y ganar valor", points:{PLOT:2}},
+          {label:"C", text:"Que funcione perfecto sin trabajo", points:{CONFORT:1, PRECISION:1}},
+        ]
+      },
+      {
+        id:"Q3",
+        text:"Q3. ¿Qué tipo de noticia te engancha más últimamente?",
+        answers:[
+          {label:"A", text:"Economía/mercados: entender qué pasa", points:{PRECISION:2}},
+          {label:"B", text:"Actualidad para debatir y opinar", points:{PRIME:1, PLOT:1}},
+          {label:"C", text:"Ciencia/salud: datos útiles (modo farma)", points:{PRECISION:1, CONFORT:1}},
+        ]
+      },
+      {
+        id:"Q4",
+        text:"Q4. En el cine, ¿qué disfrutas más?",
+        answers:[
+          {label:"A", text:"Guion perfecto: sin agujeros", points:{PRECISION:2}},
+          {label:"B", text:"Giro bien hecho: ‘no me lo vi venir’", points:{PLOT:2}},
+          {label:"C", text:"Salir con subidón y ganas de aplaudir", points:{ENERGIA:2}},
+        ]
+      },
+      {
+        id:"Q5",
+        text:"Q5. Real Madrid: ¿qué te gusta más ver en un partido?",
+        answers:[
+          {label:"A", text:"Control y estrategia", points:{PRIME:2}},
+          {label:"B", text:"Remontada épica", points:{EVENTO:2}},
+          {label:"C", text:"Ataque constante y emoción", points:{ENERGIA:2}},
+        ]
+      },
+      {
+        id:"Q6",
+        text:"Q6. En un reloj, ¿qué te conquista más?",
+        answers:[
+          {label:"A", text:"Discreción elegante", points:{PRIME:2}},
+          {label:"B", text:"Mecanismo/historia: precisión bonita", points:{PRECISION:2}},
+          {label:"C", text:"Pieza especial para una ocasión", points:{EVENTO:2}},
+        ]
+      },
+      {
+        id:"Q7",
+        text:"Q7. Mañana hay gym a las 7:00. ¿Cómo quieres levantarte?",
+        answers:[
+          {label:"A", text:"Ligero y fino", points:{PRECISION:2}},
+          {label:"B", text:"Normal, sin drama", points:{CONFORT:2}},
+          {label:"C", text:"Con una sonrisa: hoy se celebra", points:{EVENTO:2}},
+        ]
+      },
+      {
+        id:"Q8",
+        text:"Q8. Para hacer más cardio, ¿qué te motiva más?",
+        answers:[
+          {label:"A", text:"Métricas y progreso (ritmo, zonas…)", points:{PRECISION:2}},
+          {label:"B", text:"Constancia tranquila: lo que se sostiene", points:{CONFORT:2}},
+          {label:"C", text:"Reto divertido: ‘venga, una más’", points:{ENERGIA:2}},
+        ]
+      },
+      {
+        id:"Q9",
+        text:"Q9. Si esta cena fuera una decisión financiera, ¿qué prefieres?",
+        answers:[
+          {label:"A", text:"Eficiencia: todo bien atado", points:{PRECISION:2}},
+          {label:"B", text:"Ocasión especial: ‘vale cada minuto’", points:{EVENTO:2}},
+          {label:"C", text:"Algo inteligente que sorprende para bien", points:{PLOT:2}},
+        ]
+      },
+      {
+        id:"Q10",
+        text:"Q10. ¿Qué te apetece más hoy?",
+        answers:[
+          {label:"A", text:"Conversación tranquila sin interrupciones", points:{CONFORT:2}},
+          {label:"B", text:"Ambiente vivo (pero agradable)", points:{ENERGIA:2}},
+          {label:"C", text:"Un punto ‘wow’ sin estridencias", points:{PRIME:1, EVENTO:1}},
+        ]
+      },
+      {
+        id:"Q11",
+        text:"Q11. En modo ‘director financiero’ en una reunión, ¿qué estilo te sale más?",
+        answers:[
+          {label:"A", text:"Directo: ‘vamos al grano’", points:{PRECISION:2}},
+          {label:"B", text:"Con humor: tensión cero, foco igual", points:{ENERGIA:2}},
+          {label:"C", text:"Con clase: firme pero elegante", points:{PRIME:2}},
+        ]
+      },
+      {
+        id:"Q12",
+        text:"Q12. De Sri Lanka, ¿qué fue lo mejor para ti?",
+        answers:[
+          {label:"A", text:"Descubrir cosas nuevas", points:{PLOT:2}},
+          {label:"B", text:"Estar bien sin pensar demasiado", points:{CONFORT:2}},
+          {label:"C", text:"Las historias y recuerdos que te quedan", points:{EVENTO:2}},
+        ]
+      },
+      {
+        id:"Q13",
+        text:"Q13. En el cine, ¿qué asiento elegirías si pudieras?",
+        answers:[
+          {label:"A", text:"Centro perfecto: equilibrio", points:{PRIME:1, PRECISION:1}},
+          {label:"B", text:"Pasillo: práctico y rápido", points:{PRECISION:2}},
+          {label:"C", text:"El ‘mejor disponible’ de última hora", points:{PLOT:2}},
+        ]
+      },
+      {
+        id:"Q14",
+        text:"Q14. ¿Qué frase te gustaría decir al salir hoy?",
+        answers:[
+          {label:"A", text:"‘Qué bien cuidado estaba todo’", points:{PRIME:2}},
+          {label:"B", text:"‘Qué divertido ha sido’", points:{ENERGIA:2}},
+          {label:"C", text:"‘Qué sorpresa tan bien pensada’", points:{PLOT:2}},
+        ]
+      },
+      {
+        id:"Q15",
+        text:"Q15. Si te doy una bolsa de tus regalices rojas favoritas, ¿qué harías?",
+        answers:[
+          {label:"A", text:"Me como una y la guardo para luego (control total)", points:{CONFORT:1, PRECISION:1}},
+          {label:"B", text:"La comparto y además pruebo algo distinto hoy", points:{PLOT:2}},
+          {label:"C", text:"Me la acabo feliz: hoy es día de premio", points:{EVENTO:2}},
+        ]
+      },
+      {
+        id:"Q16",
+        text:"Q16. Como CFO, ¿qué te irrita más en un plan?",
+        answers:[
+          {label:"A", text:"Desorden / falta de criterio", points:{PRECISION:2}},
+          {label:"B", text:"Frialdad: cero humanidad", points:{CONFORT:2}},
+          {label:"C", text:"Que sea plano: sin emoción", points:{ENERGIA:1, EVENTO:1}},
+        ]
+      },
+      {
+        id:"Q17",
+        text:"Q17. Para la boda 2027, ¿qué tono te imaginas más?",
+        answers:[
+          {label:"A", text:"Clásico elegante", points:{PRIME:2}},
+          {label:"B", text:"Emotivo y familiar", points:{CONFORT:2}},
+          {label:"C", text:"Fiesta con momentazo", points:{EVENTO:2}},
+        ]
+      },
+      {
+        id:"Q18",
+        text:"Q18. Cuando vivamos en Terrassa, un sábado ideal sería…",
+        answers:[
+          {label:"A", text:"Tranquilo, calidad sin prisa", points:{CONFORT:2}},
+          {label:"B", text:"Con actividad y movimiento", points:{ENERGIA:2}},
+          {label:"C", text:"Plan especial de pareja", points:{PRIME:1, EVENTO:1}},
+        ]
+      },
+    ];
+
+    // Tie-breaker (solo si hay empate tras Q18)
+    const tieBreaker = {
+      id:"Q19",
+      text:"Q19 (desempate). ¿Qué prefieres que pase hoy sí o sí?",
+      answers:[
+        {label:"A", text:"Que salga todo impecable", points:{PRIME:2}},
+        {label:"B", text:"Que os sorprenda para bien", points:{PLOT:2}},
+        {label:"C", text:"Que sea un momentazo", points:{EVENTO:2}},
+      ]
+    };
+
+    // -----------------------------
+    // 3) Finales (árbol corto por perfil ganador)
+    // Cada final termina en un CODENAME.
+    // (No incluimos aquí la chuleta de restaurantes reales para que Pablo no la vea.)
+    // -----------------------------
+    const finals = {
+      PRIME: [
+        {
+          id:"Q20P",
+          text:"Q20. ¿Qué tipo de elegancia te apetece hoy?",
+          answers:[
+            {label:"A", text:"Discreción total", next:"Q21P"},
+            {label:"B", text:"Elegancia moderna", next:"Q22P"},
+            {label:"C", text:"Elegancia con ‘toque especial’", next:"Q23P"},
+          ]
+        },
+        {
+          id:"Q21P",
+          text:"Q21. ¿Te gustan más los planes…?",
+          answers:[
+            {label:"A", text:"Muy íntimos", result:"PROYECTO ORIÓN"},
+            {label:"B", text:"Muy redondos y cuidados", result:"PROYECTO ALFA"},
+            {label:"C", text:"(No hay C) — el comité te ve indeciso 😄", result:"PROYECTO ALFA"}
+          ]
+        },
+        {
+          id:"Q22P",
+          text:"Q22. Hoy te tira más…",
+          answers:[
+            {label:"A", text:"Ciudad y contemporáneo", result:"PROYECTO GAMMA"},
+            {label:"B", text:"Clásico con personalidad", result:"PROYECTO DELTA"},
+            {label:"C", text:"Algo impecable y top", result:"PROYECTO COBALTO"},
+          ]
+        },
+        {
+          id:"Q23P",
+          text:"Q23. El detalle que te gana es…",
+          answers:[
+            {label:"A", text:"Servicio finísimo", result:"PROYECTO COBALTO"},
+            {label:"B", text:"Estética y glamour", result:"PROYECTO XI"},
+            {label:"C", text:"Ambiente muy cuidado", result:"PROYECTO ORIÓN"},
+          ]
+        },
+      ],
+
+      PLOT: [
+        {
+          id:"Q20L",
+          text:"Q20. ¿Qué tipo de sorpresa te gusta más?",
+          answers:[
+            {label:"A", text:"‘No lo habría elegido yo, y me encanta’", next:"Q21L"},
+            {label:"B", text:"‘Me hace gracia y tiene rollo’", next:"Q22L"},
+            {label:"C", text:"‘Me sorprende por nivel’", next:"Q23L"},
+          ]
+        },
+        {
+          id:"Q21L",
+          text:"Q21. ¿La sorpresa te gusta más tipo…?",
+          answers:[
+            {label:"A", text:"‘Viaje sin moverse’", result:"PROYECTO ETA"},
+            {label:"B", text:"Mezcla inesperada", result:"PROYECTO IOTA"},
+            {label:"C", text:"Un giro creativo", result:"PROYECTO THETA"},
+          ]
+        },
+        {
+          id:"Q22L",
+          text:"Q22. ¿Te apetece un punto más…?",
+          answers:[
+            {label:"A", text:"Urbano y travieso", result:"PROYECTO EPSILON"},
+            {label:"B", text:"Barrio con carácter", result:"PROYECTO ZETA"},
+            {label:"C", text:"Divertido y moderno", result:"PROYECTO LAMBDA"},
+          ]
+        },
+        {
+          id:"Q23L",
+          text:"Q23. ¿Qué te gana más: creatividad o perfección?",
+          answers:[
+            {label:"A", text:"Creatividad medida", result:"PROYECTO HELIO"},
+            {label:"B", text:"Giro inesperado", result:"PROYECTO THETA"},
+            {label:"C", text:"Nivel altísimo sin ruido", result:"PROYECTO COBALTO"},
+          ]
+        },
+      ],
+
+      ENERGIA: [
+        {
+          id:"Q20E",
+          text:"Q20. ¿Cómo quieres el ambiente hoy?",
+          answers:[
+            {label:"A", text:"Animado pero cómodo", next:"Q21E"},
+            {label:"B", text:"Animado y potente", next:"Q22E"},
+            {label:"C", text:"Animado y moderno", next:"Q23E"},
+          ]
+        },
+        {
+          id:"Q21E",
+          text:"Q21. ¿Qué tipo de plan te hace más feliz hoy?",
+          answers:[
+            {label:"A", text:"Risas + comer muy bien", result:"PROYECTO QUÓRUM"},
+            {label:"B", text:"Energía con toque sofisticado", result:"PROYECTO KAPPA"},
+            {label:"C", text:"Algo distinto pero fácil de disfrutar", result:"PROYECTO EPSILON"},
+          ]
+        },
+        {
+          id:"Q22E",
+          text:"Q22. Para celebrar, ¿qué te apetece más?",
+          answers:[
+            {label:"A", text:"Sensación de festín", result:"PROYECTO PI"},
+            {label:"B", text:"Plan con carácter y brasa elegante", result:"PROYECTO NU"},
+            {label:"C", text:"Plan moderno y con ritmo", result:"PROYECTO LAMBDA"},
+          ]
+        },
+        {
+          id:"Q23E",
+          text:"Q23. ¿Lo prefieres más…?",
+          answers:[
+            {label:"A", text:"Moderno con ritmo", result:"PROYECTO LAMBDA"},
+            {label:"B", text:"Con chispa creativa", result:"PROYECTO EPSILON"},
+            {label:"C", text:"Con final ‘wow’", result:"PROYECTO KAPPA"},
+          ]
+        },
+      ],
+
+      PRECISION: [
+        {
+          id:"Q20R",
+          text:"Q20. ¿Cómo te gusta que esté diseñado el plan?",
+          answers:[
+            {label:"A", text:"Foco y claridad", next:"Q21R"},
+            {label:"B", text:"Producto impecable", next:"Q22R"},
+            {label:"C", text:"Un guion perfecto (sin relleno)", next:"Q23R"},
+          ]
+        },
+        {
+          id:"Q21R",
+          text:"Q21. ¿Te apetece algo más…?",
+          answers:[
+            {label:"A", text:"Pequeño y afinado", result:"PROYECTO OMICRON"},
+            {label:"B", text:"Contemporáneo y medido", result:"PROYECTO GAMMA"},
+            {label:"C", text:"Elegante sin ruido", result:"PROYECTO ALFA"},
+          ]
+        },
+        {
+          id:"Q22R",
+          text:"Q22. ¿Prefieres precisión con…?",
+          answers:[
+            {label:"A", text:"Nivel premium y muy cuidado", result:"PROYECTO COBALTO"},
+            {label:"B", text:"Personalidad y producto", result:"PROYECTO MU"},
+            {label:"C", text:"Final de ‘qué nivel’", result:"PROYECTO KAPPA"},
+          ]
+        },
+        {
+          id:"Q23R",
+          text:"Q23. ¿Te apetece precisión con…?",
+          answers:[
+            {label:"A", text:"Creatividad bien medida", result:"PROYECTO HELIO"},
+            {label:"B", text:"Mezcla de estilos con sentido", result:"PROYECTO KAPPA"},
+            {label:"C", text:"Redondez absoluta", result:"PROYECTO DELTA"},
+          ]
+        },
+      ],
+
+      CONFORT: [
+        {
+          id:"Q20C",
+          text:"Q20. ¿Qué plan te encaja más hoy?",
+          answers:[
+            {label:"A", text:"Hablar tranquilos y salir felices", next:"Q21C"},
+            {label:"B", text:"Comodidad total: cero pensar", next:"Q22C"},
+            {label:"C", text:"Acogedor pero con nivel", next:"Q23C"},
+          ]
+        },
+        {
+          id:"Q21C",
+          text:"Q21. ¿Tu confort es más…?",
+          answers:[
+            {label:"A", text:"Cálido y con alma", result:"PROYECTO DELTA"},
+            {label:"B", text:"Bistró cómodo y elegante", result:"PROYECTO GAMMA"},
+            {label:"C", text:"Pareja tranquila, plan fino", result:"PROYECTO ALFA"},
+          ]
+        },
+        {
+          id:"Q22C",
+          text:"Q22. ¿Prefieres confort…?",
+          answers:[
+            {label:"A", text:"Pequeño y tranquilo", result:"PROYECTO OMICRON"},
+            {label:"B", text:"Tranquilo pero con carácter", result:"PROYECTO ORIÓN"},
+            {label:"C", text:"Con chispa sin ruido", result:"PROYECTO GAMMA"},
+          ]
+        },
+        {
+          id:"Q23C",
+          text:"Q23. ¿Qué te gana más hoy?",
+          answers:[
+            {label:"A", text:"Sensación de ‘hogar pro’", result:"PROYECTO DELTA"},
+            {label:"B", text:"Sensación de ‘pareja premium’", result:"PROYECTO ALFA"},
+            {label:"C", text:"Redondez y calma", result:"PROYECTO ORIÓN"},
+          ]
+        },
+      ],
+
+      EVENTO: [
+        {
+          id:"Q20V",
+          text:"Q20. ¿Qué tipo de ‘evento’ quieres que sea la noche?",
+          answers:[
+            {label:"A", text:"Glamour e impacto", next:"Q21V"},
+            {label:"B", text:"Nivel gastronómico", next:"Q22V"},
+            {label:"C", text:"Celebración contundente", next:"Q23V"},
+          ]
+        },
+        {
+          id:"Q21V",
+          text:"Q21. Para ti, glamour es…",
+          answers:[
+            {label:"A", text:"Plan grande con estética top", result:"PROYECTO XI"},
+            {label:"B", text:"Elegancia discreta de altísimo nivel", result:"PROYECTO COBALTO"},
+            {label:"C", text:"Celebración fina sin ruido", result:"PROYECTO ALFA"},
+          ]
+        },
+        {
+          id:"Q22V",
+          text:"Q22. Para ti, nivel gastronómico es…",
+          answers:[
+            {label:"A", text:"Producto premium impecable", result:"PROYECTO KAPPA"},
+            {label:"B", text:"Técnica + creatividad bien pensada", result:"PROYECTO HELIO"},
+            {label:"C", text:"Plan perfecto y redondo", result:"PROYECTO DELTA"},
+          ]
+        },
+        {
+          id:"Q23V",
+          text:"Q23. Para celebrar a lo grande, ¿qué te apetece más?",
+          answers:[
+            {label:"A", text:"Potencia y brasa", result:"PROYECTO PI"},
+            {label:"B", text:"Carácter con final ‘wow’", result:"PROYECTO NU"},
+            {label:"C", text:"Energía moderna", result:"PROYECTO LAMBDA"},
+          ]
+        },
+      ],
+    };
+
+    // -----------------------------
+    // 4) UI + Motor del test
+    // -----------------------------
+    const screenWelcome = document.getElementById("screenWelcome");
+    const screenQuiz = document.getElementById("screenQuiz");
+    const screenResult = document.getElementById("screenResult");
+
+    const btnStart = document.getElementById("btnStart");
+    const btnPreview = document.getElementById("btnPreview");
+    const btnRestart = document.getElementById("btnRestart");
+    const btnPlayAgain = document.getElementById("btnPlayAgain");
+
+    const qText = document.getElementById("qText");
+    const answersEl = document.getElementById("answers");
+    const stepText = document.getElementById("stepText");
+    const fill = document.getElementById("fill");
+    const resultCode = document.getElementById("resultCode");
+    const resultHint = document.getElementById("resultHint");
+
+    let scores, phase, baseIndex, currentFinalId, finalProfile, tieAsked;
+
+    function resetGame(){
+      scores = freshScores();
+      phase = "welcome";     // welcome | base | tie | final | done
+      baseIndex = 0;
+      currentFinalId = null;
+      finalProfile = null;
+      tieAsked = false;
+
+      screenWelcome.style.display = "";
+      screenQuiz.style.display = "none";
+      screenResult.style.display = "none";
+    }
+
+    function showQuiz(){
+      screenWelcome.style.display = "none";
+      screenQuiz.style.display = "";
+      screenResult.style.display = "none";
+      phase = "base";
+      render();
+    }
+
+    function getProgress(){
+      // total steps shown to user: 18 base + (0/1 tie) + 3 final approx.
+      // We'll compute dynamically for a smooth bar.
+      let shown = 0;
+      if (phase === "base") shown = baseIndex;
+      if (phase === "tie") shown = 18;
+      if (phase === "final") shown = 18 + (tieAsked ? 1 : 0) + countFinalAnswered();
+      if (phase === "done") shown = 18 + (tieAsked ? 1 : 0) + 3;
+      const total = 22; // target feel (21-22)
+      return {shown, total};
+    }
+
+    function countFinalAnswered(){
+      // We can approximate by counting how many final questions we've advanced past.
+      // For UI purposes only.
+      if (!currentFinalId) return 0;
+      const list = finals[finalProfile] || [];
+      const idx = list.findIndex(q => q.id === currentFinalId);
+      return Math.max(0, idx);
+    }
+
+    function render(){
+      const {shown, total} = getProgress();
+      const stepNumber = Math.min(shown + 1, total);
+      stepText.textContent = `Pregunta ${stepNumber} de ${total}`;
+      fill.style.width = `${Math.min(100, Math.round((shown/total)*100))}%`;
+
+      answersEl.innerHTML = "";
+
+      if (phase === "base"){
+        const q = baseQuestions[baseIndex];
+        qText.textContent = q.text;
+        q.answers.forEach((a) => {
+          const btn = document.createElement("button");
+          btn.className = "answer";
+          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
+          btn.onclick = () => {
+            addPoints(scores, a.points);
+            baseIndex++;
+            if (baseIndex >= baseQuestions.length){
+              decideAfterBase();
+            } else {
+              render();
+            }
+          };
+          answersEl.appendChild(btn);
+        });
+        return;
+      }
+
+      if (phase === "tie"){
+        qText.textContent = tieBreaker.text;
+        tieBreaker.answers.forEach(a => {
+          const btn = document.createElement("button");
+          btn.className = "answer";
+          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
+          btn.onclick = () => {
+            addPoints(scores, a.points);
+            tieAsked = true;
+            decideFinalProfile(); // now pick profile and start finals
+          };
+          answersEl.appendChild(btn);
+        });
+        return;
+      }
+
+      if (phase === "final"){
+        const q = (finals[finalProfile] || []).find(x => x.id === currentFinalId);
+        if (!q){
+          // safety fallback
+          finishWith("PROYECTO ALFA");
+          return;
+        }
+        qText.textContent = q.text;
+        q.answers.forEach(a => {
+          const btn = document.createElement("button");
+          btn.className = "answer";
+          btn.innerHTML = `<strong>${a.label})</strong> ${a.text}`;
+          btn.onclick = () => {
+            if (a.result){
+              finishWith(a.result);
+            } else if (a.next){
+              currentFinalId = a.next;
+              render();
+            } else {
+              finishWith("PROYECTO ALFA");
+            }
+          };
+          answersEl.appendChild(btn);
+        });
+        return;
+      }
+    }
+
+    function decideAfterBase(){
+      // Determine top score(s)
+      const entries = Object.entries(scores);
+      const max = Math.max(...entries.map(e => e[1]));
+      const top = entries.filter(e => e[1] === max).map(e => e[0]);
+
+      if (top.length === 1){
+        finalProfile = top[0];
+        startFinal();
+      } else {
+        // Ask tie breaker
+        phase = "tie";
+        render();
+      }
+    }
+
+    function decideFinalProfile(){
+      const entries = Object.entries(scores);
+      const max = Math.max(...entries.map(e => e[1]));
+      const top = entries.filter(e => e[1] === max).map(e => e[0]);
+
+      // If still tied, pick the one that appears first in this priority list.
+      const priority = ["EVENTO","PRIME","PRECISION","PLOT","ENERGIA","CONFORT"];
+      finalProfile = top.sort((a,b) => priority.indexOf(a) - priority.indexOf(b))[0];
+      startFinal();
+    }
+
+    function startFinal(){
+      phase = "final";
+      // pick first node of that profile
+      const list = finals[finalProfile] || [];
+      currentFinalId = list.length ? list[0].id : null;
+      render();
+    }
+
+    function finishWith(code){
+      phase = "done";
+      screenQuiz.style.display = "none";
+      screenWelcome.style.display = "none";
+      screenResult.style.display = "";
+      resultCode.textContent = code;
+
+      // A little tailored closing line based on profile:
+      const closing = {
+        PRIME: "Destino con elegancia, de los que un reloj discreto aprobaría.",
+        PLOT: "Destino con giro inteligente: hoy gana el ‘no me lo esperaba’.",
+        ENERGIA: "Destino con ritmo: celebración con sonrisa garantizada.",
+        PRECISION: "Destino de precisión: criterio y detalle, como te gusta.",
+        CONFORT: "Destino para hablar y estar bien: pareja y futuro en modo bonito.",
+        EVENTO: "Destino ‘premio’: hoy toca plan grande, sin medias tintas."
+      };
+      resultHint.textContent = closing[finalProfile] || "Destino asignado. Confía en María.";
+
+      // reset progress bar to 100
+      fill.style.width = "100%";
+    }
+
+    // -----------------------------
+    // 5) Botones
+    // -----------------------------
+    btnStart.addEventListener("click", () => {
+      showQuiz();
+    });
+
+    btnPreview.addEventListener("click", () => {
+      // just re-shows the welcome, nothing else
+      screenWelcome.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    btnRestart.addEventListener("click", () => {
+      resetGame();
+      showQuiz();
+    });
+
+    btnPlayAgain.addEventListener("click", () => {
+      resetGame();
+      showQuiz();
+    });
+
+    // init
+    resetGame();
+  </script>
 </body>
 </html>
